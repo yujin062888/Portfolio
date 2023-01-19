@@ -1,0 +1,741 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@font-face {
+    font-family: 'NewYork' ;
+    src: url(../font/NewYork-PERSONAL-USE.woff) format('woff');
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Thin.woff2) format('woff');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Light.woff2) format('woff');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Regular.woff2) format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Medium.woff2) format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Bold.woff2) format('woff');
+    font-weight: 500;
+}
+
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* 공통폰트 */
+body {font-family: 'Noto Sans KR',sans-serif; font-weight: 500;}
+.ny {font-family: 'NewYork';}
+.hv {font-family: 'HelveticaNowText'; font-weight: 400;}
+.wrap {width: 100%; overflow: hidden;}
+
+
+/* header */
+header {width: 100%;  z-index: 200;  position: fixed; }
+.innerHeader {width: 95%; margin: 0 auto; padding-top: 38px; box-sizing: border-box; overflow: hidden; height: 110px; color: #252525; border-bottom: 1px solid #252525; }
+.innerHeader .logo {float: left; font-size: 28px; font-family: 'HelveticaNowText'; font-weight: 300; line-height: 0.8;   }
+.innerHeader .logo a {display: block; width: 100%; height: 100%; }
+.innerHeader a .b {padding-left: 15px;}
+.innerHeader .gnb {float: right; }
+.innerHeader .gnb > li {float: left; margin-right: 20px;}
+.innerHeader .gnb > li:nth-child(2) { margin-right: 0;}
+.innerHeader .gnb > li > a {display: block; width: 100%; height: 100%; }
+.innerHeader .gnb > li:nth-child(1) > a {background: #252525; color: #dadada; padding: 15px 22px; box-sizing: border-box; 
+    border-radius: 30px; font-size: 18px; font-family: 'HelveticaNowText'; font-weight: 300;}
+
+/* fixed header on 붙었을 때  */
+header.on .innerHeader {border-bottom: none; }
+header.on .innerHeader .gnb > li:nth-child(1) > a {color: #fff;}
+/* header 색상 변경 */
+header.white #white {border-bottom: none; color: #dadada;}
+header.white > .innerHeader > .gnb > li:nth-child(1) > a {background: #dadada; color: #252525;}
+
+
+/* MenuOpen */
+.menuOpen a.open {font-size: 28px; font-family: 'HelveticaNowText'; font-weight: 300; line-height: 0.8; padding-top: 2px; }
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top:0; right: 0; z-index: 200; background: #dadada;}
+.innerHeader .menuWrap .gnb { float:right; padding: 38px 2.5% 0 0; box-sizing: border-box;}
+.innerHeader .menuWrap .gnb > li {float: left; margin-right: 20px; }
+.innerHeader .menuWrap .gnb > li .mo {display: none;}
+.innerHeader .menuWrap .gnb > li:nth-child(2) {margin-right: 0;}
+.innerHeader .menuWrap .gnb > li > a {display: block; width: 100%; height: 100%; }
+.innerHeader .menuWrap .gnb > li:nth-child(1) > a {background: #252525; color: #dadada; padding: 15px 22px; box-sizing: border-box; border-radius: 30px; font-size: 18px; font-family: 'HelveticaNowText'; font-weight: 300;} 
+.innerHeader .menuWrap .gnb > li:nth-child(2) > a {font-size: 28px;  font-weight: 300; line-height: 0.8; padding-top: 2px; ;}
+.menuOpen .menuWrap .tit {width: 80%; color: #252525; position: absolute; top:50%; transform: translate(-50%,-50%); left:50%; font-size: 120px; text-align: center;}
+.menuOpen .menuWrap .tit li a { display: block; margin-bottom: 20px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(30px); color: #dadada; }
+.menuOpen .menuWrap .tit li a:after {content: ''; width: 0%; height: 100%; background: #252525;position: absolute; left: 8%;  bottom: 0; transition: all 0.3s; z-index: -1;}
+.menuOpen .menuWrap .tit li a:hover:after , .menuOpen .menuWrap .tit li a:focus:after {width: 80%;}
+/* close btn */
+.menuOpen .menuWrap .close.img {position:absolute; top:50%; transform: translateY(-50%); right:30px; }
+/* MenuOpen 열기작성*/
+.menuOpen .menuWrap {width: 0%; transition: all 0.5s; transform: translateX(100%); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; transform: translateX(0%); transition: all 0.5s; opacity: 1; }
+/* MenuOpen ul li ani */
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;} 
+/* 메뉴열었을 때 회전하는 img */
+.menuOpen .menuWrap.on:before {content: ''; width: 652px; height: 646px; background: url(../img/img_04.png)no-repeat; position: absolute; top: 50%; transform: translateY(-50%); left: 10%; opacity: 0.4; transition: all 0.4s; }
+.menuOpen .menuWrap.on:before {animation : spin-menuwrap 20s infinite linear; }
+
+@keyframes spin-menuwrap {
+    from{transform: translateY(-50%) rotate(0deg);}
+    to{transform: translateY(-50%) rotate(360deg);}
+}
+
+
+/* visual */
+.visual {width: 100%; padding:110px 0 ; background: #dadada; color: #252525; height: 100vh; position: relative; }
+.visual .text {max-width: 1400px; margin: 0 auto; line-height: 0.9; padding-top: 170px;  position: relative; perspective: 150px; margin-bottom: 100px; }
+.visual .text.mo {display: none;}
+.visual .text .tit1 {font-size: 175px; letter-spacing: -3px; padding-left:1%; }
+.visual .text .tit2 {font-size: 150px; letter-spacing: -5px; padding-left: 20%;}
+.visual .text .tit3 {font-size: 175px;letter-spacing: -5px; padding-left: 50%;}
+.visual .text .subtext {opacity: 0.7;}
+.visual .text .subtext.a {font-size: 11px;line-height: 1.5;letter-spacing: -3; position: absolute;  bottom:34%; right: 19%;  }
+.visual .text .subtext.b {font-size: 11px;line-height: 1.5; text-align: right; position: absolute;  bottom:3%; left:43%; }
+.visual .img.a {width: 640px; height: 634px;  position: absolute;  top:52%; left: 10%; z-index: 1;}
+.visual .img.a::before {content: ''; width: 90px; height: 90px; background: url(../img/dot90_dg.png)no-repeat center; position: absolute; top: 30px; left: 0; transform: rotate(8deg); transition: all 0.4s;}
+.visual .img.b {width: 558px; height: 453px;  position: absolute;  top:20%; right:-4%;}
+.visual .img.c {width: 446px; height: 127px;  position: absolute;  top:-3%; right:37%; }
+.visual .img.c::before {content: ''; width: 83px; height: 83px; background: url(../img/dot83_lg.png)no-repeat center; position: absolute; top:50px; right: 80px; transform: rotate(-8deg); transition: all 0.4s;}
+.visual .img img {width: 100%;}
+.visual .dot {width: 8px; height: 8px; border-radius: 50%; position: absolute; bottom: 25%; left: 50%; background: #252525; }
+.visual .binbox {height: 200px; width: 100%;}
+
+/* 텍스트 부모 감싸주는 공통 animation */
+.pa {overflow: hidden;} 
+.pa:nth-child(3) {padding-bottom: 30px;}
+/* visual animation */
+.visual.motion .text .tit1 {animation-name: textAni ; animation-duration: 0.8s  }
+.visual.motion .text .tit2 {animation-name: textAni ; animation-duration: 1.0s  }
+.visual.motion .text .tit3 {animation-name: textAni ; animation-duration: 1.2s  }
+.visual.motion .text .subtext {animation-name: slide-up ; animation-duration: 1.2s; }
+.visual.motion .img.a {animation-name: slide-up ; animation-duration: 1.3s; }
+.visual.motion .img.b {animation-name: right ; animation-duration: 1.3s; }
+.visual.motion .img.c {animation-name: slide-down ; animation-duration: 1.3s; }
+.visual.motion .dot {animation: bounce 2.5s ease infinite ; }
+.visual.motion .img.a::before, .visual.motion .img.c::before {animation: spin 10s linear infinite;} 
+
+/* animation 공통 */
+@keyframes textAni {
+    0%{opacity: 0;}
+    30%{opacity: 0; transform: translate3d(0,80px,0)skewY(30deg);  transform-origin: bottom left;}
+}
+
+@keyframes slide-up {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateY(150px);}
+}
+@keyframes slide-down {
+    0% {opacity: 0; }
+    30% {opacity: 0; transform: translateY(-150px);}
+}
+
+@keyframes right {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(200px);}
+}
+@keyframes left {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(-200px);}
+}
+
+@keyframes spin {
+    from{transform:  rotate(0deg);}
+    to{transform:  rotate(360deg);}
+}
+
+/* section02 */
+.section02 {width: 100%;  padding: 150px 0 450px; box-sizing: border-box; background: #252525;  position: relative; color: #dadada; }
+.section02::before {content: ''; position: absolute; top: -200px; left: 0; background: url(../img/bg_11.png)no-repeat center; width: 100%; height: 200px; }
+.section02 .txt {font-weight: 300; font-size: 20px; padding-left: 62%; }
+.section02 .txt span {font-weight: 500; color: #9FF5FF; }
+.section02 .move {width: 10px; height: 518px;  position: absolute; top: 0; left: 50%; }
+.section02 .move span {width: 14px; height: 14px; border-radius: 50%; position: absolute; bottom: 0%; left: 0%; background: #9FF5FF; transition: all 0.4s;}
+.section02 .move span:hover {transform: translateY(-25px);}
+.section02 .dot {width: 100vw; height: 8px; background:url(../img/border_dotted.png)no-repeat center;  margin: 270px 0 30px; }
+.section02 .animated-title {font-size: 133px; letter-spacing: -8px;  font-family: 'HelveticaNowText'; font-weight: 100; position: relative; width: 100%; max-width:100%; height: auto; margin-bottom: 190px; color: #9FF5FF; }
+.section02 .animated-title span {font-family: 'NewYork';}
+.section02 .animated-title .track {position: absolute; white-space: nowrap; animation: marquee 60s linear infinite;}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-60%); }
+}
+
+/* 배경 공통 animation */
+.section02.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+/* section02 animation */
+.section02.motion .txt {animation-name: slide-up ; animation-duration: 1s;}
+.section02.motion .move span {animation: bounceInDown 1.0s ease-out ; }
+/* .section02.motion .move span::before {animation-name: dot-move-line; animation-duration: 1.5s; animation-delay: 3s;} */
+.section02.motion .animated-title {animation-name: slide-up ; animation-duration: 1s;}
+.section02.motion .dot {animation-name: slide-up ; animation-duration: 1s;}
+
+
+@keyframes slide-up-bg {
+    0% { transform: translateY(200px); }
+    20% {transform: translateY(200px);}
+}
+@keyframes dot-move {
+    0% {opacity: 0; width: 0px; bottom: 100%;}
+    30% {opacity: 0; width: 0px; bottom: 100%;}
+}
+@keyframes dot-move-line {
+    0% {opacity: 0; transform: scale(0.2); border: 1px solid #9FF5FF;}
+    30% {opacity: 0; transform: scale(0); border: 1px solid #9FF5FF; }
+}
+
+
+/* gallery */
+.gallery {width: 100%; padding: 100px 0 400px; position: relative; color: #252525;}
+.gallery::before {content: ''; background: url(../img/bg_22.png)no-repeat center; position: absolute; top: -200px; left: 0; width: 100%; height: 200px;}
+.gallery .inner {max-width: 1400px; margin: 0 auto;   }
+.gallery .inner .tit {text-align: center; line-height: 0.9;  letter-spacing: -5px; margin-bottom: 200px; }
+.gallery .inner .tit .tit1 {font-size: 135px; padding-right: 25%;}
+.gallery .inner .tit .tit2 {font-size: 110px; text-transform: uppercase; padding-left: 0%;}
+.gallery .inner .tit .tit3 {font-size: 135px; padding-left: 25%;}
+.gallery .inner .list {width: 100%; }
+.gallery .inner .list li {width: 100%; margin-bottom: 200px; overflow: hidden; transition: all 0.4s;}
+.gallery .inner .list li .img {width: 700px; height: 694px; float: left; }
+/* img hover */
+.gallery .inner .list li .img img:focus,.gallery .inner .list li .img img:hover {transform: translateX(30px);}
+.gallery .inner .list li:nth-child(2) .img img:focus,.gallery .inner .list li:nth-child(2) .img img:hover {transform: translateX(-30px);}
+
+.gallery .inner .list li .img img {width: 100%; transition: all 0.4s; }
+.gallery .inner .list li .txtBox {width: 42%;float: right; padding-top: 14%; box-sizing: border-box;   text-transform: uppercase; }
+.gallery .inner .list li .txtBox .subtit {font-size: 100px; line-height: 0.8; text-align: right; margin-bottom: 20px; letter-spacing: -5px; font-weight: 300;}
+.gallery .inner .list li .txtBox .subtit span {padding-right: 41%; box-sizing: border-box; } 
+.gallery .inner .list li .txtBox .subtit b {font-weight: 300;}
+.gallery .inner .list li .txtBox .sub {font-size: 16px; text-align: right; font-weight: 300;  letter-spacing: 1; margin-bottom: 50px;}
+.gallery .inner .list li .txtBox .txt {font-size: 16px; font-weight: 400; padding-left: 26%; box-sizing: border-box;} 
+/* gallery li 2번째 */
+.gallery .inner .list li:nth-child(2) .img {float: right;}
+.gallery .inner .list li:nth-child(2) .txtBox {float: left;}
+.gallery .inner .list li:nth-child(2) .txtBox .subtit span { padding-right: 12%;}
+.gallery .inner .list li:nth-child(2) .txt {padding-left: 40%;}
+/* gallery li 3번째 */
+.gallery .inner .list li:nth-child(3) .txtBox .subtit span.a {padding-right: 61%;}
+.gallery .inner .list li:nth-child(3) .txtBox .subtit span.b {padding-right: 15%;}
+.gallery .inner .list li:nth-child(3) .txt  {padding-left: 40%;}
+.gallery .img.a {position: absolute; top: 10%; left: 10%; transform: rotate(5deg);}
+.gallery .img.b {position: absolute; top: 18%; right: -1%; transform: rotate(-18deg);}
+.gallery .img.c {position: absolute; bottom: 33%; left: 15%; transform: rotate(18deg);}
+.gallery > .img  {width: 83px; height: 83px;} 
+.gallery > .img > img {width: 100%;}
+
+/* gallery animation */
+.gallery.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+.gallery .tit.motion .tit1 {animation-name: textAni ; animation-duration: 0.6s  }
+.gallery .tit.motion .tit2 {animation-name: textAni ; animation-duration: 0.8s  }
+.gallery .tit.motion .tit3 {animation-name: textAni ; animation-duration: 1s  }
+.gallery .inner .list li.motion {animation-name: left ; animation-duration: 0.5s; }
+.gallery .inner .list li.motion:nth-child(2) {animation-name: right ; animation-duration: 0.5s; }
+.gallery .inner .list li.motion:nth-child(3) {animation-name: left ; animation-duration: 0.5s;}
+.gallery.motion .img.a {animation: spin 10s linear infinite;}
+.gallery.motion .img.b {animation: spin 10s linear infinite;}
+.gallery.motion .img.c {animation: spin 10s linear infinite;}
+
+
+/* btn 공통 (바로가기 버튼) */
+.btn {display: block; text-align: center; margin: 0 auto; width: 270px; height: 65px; font-size: 25px; font-weight: 300; padding: 17px 30px; box-sizing: border-box; border-radius: 50px; background: #252525; color: #ffffff; transition: all 0.4s;}
+.btn:hover, .btn:focus {color: #9FF5FF; }
+.btn.motion {animation-name: slide-up ; animation-duration: 0.5s;}
+
+
+/* aboutme */
+.aboutme {width: 100%; padding: 100px 0 300px; position: relative; background: #252525; color: #dadada;}
+.aboutme::before {content: ''; background: url(../img/bg_11.png)no-repeat center/cover; position: absolute; top: -200px; left: 0; width: 100%; height: 200px;}
+.aboutme .inner {width: 1400px; margin: 0 auto;  overflow:hidden; }
+.aboutme .inner .pa:nth-child(1) {padding-bottom: 15px;}
+.aboutme .inner .pa:nth-child(3) {margin-bottom: 0;}
+.aboutme .inner .tit {text-align: center;  letter-spacing: -2px;  margin-bottom: 100px; box-sizing: border-box; line-height: 1.3;}
+.aboutme .inner .tit1 {font-size: 109px; letter-spacing: -2px; padding-left: -20%;line-height: 0.8; color: #9FF5FF;}
+.aboutme .inner .tit2 {font-size: 107px; padding-left: 20%;  letter-spacing: -2px; }
+.aboutme .inner .tit3 {font-size: 109px; line-height: 0.9; color: #9FF5FF; }
+.aboutme .inner .imgBox {float: left; width: 50%; position: relative; }
+.aboutme .inner .imgBox .img {width: 700px; height: 694px; }
+.aboutme .inner .imgBox .img img {width: 100%;}
+.aboutme .inner .textBox {float: right; width: 50%; padding-top: 50px; padding-left: 5%; box-sizing: border-box; position: relative;}
+.aboutme .inner .textBox .icon {width: 105px;  position: relative; margin-bottom: 80px;}
+.aboutme .inner .textBox .icon .imgA {width: 75px; height: 75px;}
+.aboutme .inner .textBox .icon .imgB {width: 104px; height: 104px; position: absolute; top: 16px; left: 45px; }
+.aboutme .inner .textBox .icon .img img {width: 100%;}
+.aboutme .inner .textBox .sub {font-size: 51px; font-weight: 500; margin-bottom: 30px;}
+.aboutme .inner .textBox .subtext {font-size: 16px; font-weight: 300; margin-bottom: 50px;}
+
+
+/* aboutme btn */
+.aboutme  .btn {width: 208px; height: 64px; color: #252525; background: #9FF5FF; padding: 17px 15px; position: absolute; bottom: -10%; right: 10%;}
+.aboutme .btn:hover , .aboutme .btn:focus {background: #535353; color: #9FF5FF;} 
+
+/* aboutme animation */
+.aboutme.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+.aboutme .inner .tit.motion .tit1 {animation-name: textAni ; animation-duration: 0.7s  }
+.aboutme .inner .tit.motion .tit2 {animation-name: textAni ; animation-duration: 0.9s  }
+.aboutme .inner .tit.motion .tit3 {animation-name: textAni ; animation-duration: 1.1s  }
+.aboutme .inner .imgBox.motion {animation-name: slide-up ; animation-duration: 0.5s;}
+.aboutme .inner .textBox .icon .imgA.motion {animation-name: left ; animation-duration: 0.3s; animation-delay: 0.2s;}
+.aboutme .inner .textBox .icon .imgB.motion {animation-name: left ; animation-duration: 0.4s; animation-delay: 0.2s;}
+.aboutme .inner .textBox .sub.motion {animation-name: left ; animation-duration: 0.4s; animation-delay: 0.2s;}
+.aboutme .inner .textBox .subtext.motion {animation-name: left ; animation-duration: 0.5s; animation-delay: 0.2s;}
+.aboutme .btn.motion {animation-name: left ; animation-duration: 0.4s; animation-delay: 0.2s;}
+
+
+/* ncs */
+.ncs {width: 100%; background: #dadada; color: #252525; z-index: -100; padding: 0 0 400px; }
+.ncs .animated-title {font-size: 133px; letter-spacing: -8px;  font-family: 'HelveticaNowText'; font-weight: 100; position: relative; width: 100%;  height: auto;  }
+.ncs .animated-title span {font-family: 'NewYork';}
+.ncs .animated-title .track { position: absolute; white-space: nowrap; will-change: transform; animation: marquee 60s linear infinite; }
+.ncs .animated-title .track.b {animation: marqueeright 60s linear infinite; position: absolute; top: 125px;}
+
+@keyframes marqueeright {
+    from { transform: translateX(-60%); }
+    to { transform: translateX(0); }
+}
+.ncs .subBox {padding: 500px 0 200px; width: 1100px; margin: 0 auto; overflow: hidden;  }
+.ncs .subBox .img {float: left; width: 120px; height: 120px; position: relative; z-index: 100;}
+.ncs .subBox .img::after {content: ''; background: #9FF5FF; width: 120px; height: 120px; position: absolute; top: 12%; left: 25%; opacity: 0.5; z-index: -1;}
+.ncs .subBox .img img {width: 100%;}
+.ncs .subBox .txt {float: right; font-size: 22px; line-height: 1.8;}
+
+/* ncs animation */
+.ncs.motion .animated-title {animation-name: slide-up ; animation-duration: 0.5s;}
+.ncs .subBox .img.motion {animation-name: left ; animation-duration: 0.5s; }
+.ncs .subBox .txt.motion {animation-name: right ; animation-duration: 0.5s; }
+.ncs .mySwiper.motion {animation-name: slide-up ; animation-duration: 0.5s;}
+/* ncs slide */
+.ncs .mySwiper {width: 100%; margin: 0 auto 200px;}
+.ncs .swiper-slide {transform: scale(0.8); transition: transform 0.5s;}
+.ncs .swiper-slide img {width: 100%; }
+.ncs .swiper-slide.swiper-slide-active {transform: scale(1);}
+.ncs .mySwiper .swiper-button-next {position: absolute;  top: 50%; right: 20%; z-index: 900; color: #252525; font-weight: 800;}
+.ncs .mySwiper .swiper-button-prev {position: absolute;  top: 50%; left: 20%;  z-index: 900;color: #252525; font-weight: 800;}
+
+
+
+/* skill */
+.skill {width: 100%; padding: 100px 0 100px; position: relative; background: #252525; color: #dadada;}
+.skill::before {content: ''; background: url(../img/bg_11.png)no-repeat center/cover; position: absolute; top: -200px; left: 0; width: 100%; height: 200px;}
+.skill .textBox {width: 850px; margin: 0 auto; }
+.skill .textBox .icon {width: 40%; margin: 0 auto; position: relative;}
+.skill .textBox .icon .imgA {width: 106px; height: 106px; position: absolute; top: 0; left: 20%; }
+.skill .textBox .icon .imgB {width: 106px; height: 106px; position: absolute; top: 0; left: 20%;  display: none;}
+.skill .textBox .icon .imgC {width: 147px; height: 147px; position: absolute; top: 25px; left: 39%; }
+.skill .textBox .tit {padding: 300px 0 0 ; box-sizing: border-box; line-height: 1;}
+.skill .textBox .tit .pa:nth-child(1) {padding-bottom: 2px;}
+.skill .textBox .tit .tit1 {font-size: 140px; }
+.skill .textBox .tit .tit2 {font-size: 105px; padding-left: 12%; box-sizing: border-box; line-height: 0.9;}
+.skill .textBox .tit .tit3 {font-size: 140px;  padding-left: 73%; box-sizing: border-box;}
+.skill .gauge { display: flex; flex-wrap: nowrap; padding: 12% 30%; box-sizing: border-box;}
+.skill .gauge li {flex-shrink: 0 !important; width: 377px; height: 577px;  border: 1px solid #dadada; border-radius: 60px;  margin: 0 28px;  text-align: center;  }
+.skill .gauge li img {width: 180px; height: 180px; margin: 80px 0 54px; }
+.skill .gauge li .subtit {font-size: 37px; margin-bottom: 41px; letter-spacing: -1px;}
+.skill .gauge li .sub {font-size: 15px; font-weight: 300;}
+.skill .gauge li:nth-child(6) .subtit,.skill .gauge li:nth-child(5) .subtit {font-size: 30px;} 
+
+
+/* skill animation */
+.skill.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+.skill.motion .textBox .icon .imgA {animation-name: slide-up ;  animation-duration: 0.5s;}
+.skill.motion .textBox .icon .imgC {animation-name: slide-up ; animation-duration: 0.6s;}
+.skill .textBox .tit.motion .tit1 {animation-name: textAni ; animation-duration: 0.7s }
+.skill .textBox .tit.motion .tit2 {animation-name: textAni ; animation-duration: 0.9s }
+.skill .textBox .tit.motion .tit3 {animation-name: textAni ; animation-duration: 1.1s }
+.skill .gauge.motion {animation-name: gauge ;  animation-duration: 0.8s; }
+@keyframes gauge  {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(100%)}
+}
+
+
+/* footer */
+footer {width: 100%; background: #dadada; color: #252525; padding: 420px 0 200px; position: relative;}
+/* footer 위 bar maquee 태그 */
+footer .cover {width: 105vw; height: 130px;position: absolute;top: 0;left: -20px;background-color: #fff;border: 1px solid#252525;transform: rotate(-6deg);font-size: 53px;overflow: hidden;padding-top: 7px;}
+footer .cover ul { font-size: 50px; width: 200%;  }
+footer .cover ul li {margin: 30px 60px; position: relative;  float: left;}
+footer .cover ul li:after {content: ''; position: absolute; top: 5px; left: -60px; width: 5px; height: 80%; background: #252525;}
+footer .cover ul li span {font-family: 'NewYork'; font-size: 60px; padding-top: none;}
+footer .cover:nth-child(1) ul li {float: right;}
+footer .cover:nth-child(2) {transform: rotate(6deg);} 
+footer .icon {width: 200px; margin: 0 auto;  position: relative;}
+footer .icon .imgA {position: absolute; top: 180px; right: 170px; width: 90px; height: 90px; }
+footer .icon .imgB {position: absolute; top: 145px; right: 125px; width: 62px; height: 62px; }
+footer .icon img {width: 100%;}
+footer .inner {width: 1200px; margin: 0 auto ; padding-top: 250px; overflow: hidden; }
+footer .inner .left {float:left; width: 45%;  line-height: 0.8; }
+footer .inner .left .tit1 {font-size: 162px; letter-spacing: -8px; }
+footer .inner .left .tit2 {font-size: 119px; font-weight: 300; padding-left: 160px; letter-spacing: -8px; margin-bottom: 30px;}
+footer .inner .left .subtext {font-size: 14px; font-weight: 300; text-align: right; line-height: 1.3; }
+footer .inner .right {float:right; width: 30%; overflow: hidden; }
+footer .inner .right .txt {margin:30px 0; font-size: 30px; font-weight: 400; }
+footer .inner .right .txt span {display: block; opacity: 0.6; font-size: 25px; font-weight: 300; }
+footer .inner .right .address {font-family: 'Noto Sans KR',sans-serif;  font-weight: 500; font-size: 30px;}
+footer .inner .right .address span {display: block; font-family: 'HelveticaNowText'; opacity: 0.6; font-size: 25px; font-weight: 300; }
+
+/* footer animation */
+footer.motion .inner .left .tit1 {animation-name: right; animation-duration: 0.7s;}
+footer.motion .inner .left .tit2 {animation-name: right; animation-duration: 0.9s;}
+footer.motion .inner .left .subtext {animation-name: right; animation-duration: 1.1s;}
+footer.motion .inner .right .txt {animation-name: left; animation-duration: 0.7s;}
+footer.motion .inner .right .txt:nth-child(2) {animation-name: left; animation-duration: 0.9s;}
+footer.motion .inner .right .address {animation-name: left; animation-duration: 1.1s;}
+
+
+
+
+
+/* 반응형 제작 */
+/* ~1669 */
+@media screen and (max-width:1750px) {
+.visual .img.a {top:52%; left: 100px;}
+.visual .img.b { top:20%; right:-200px;}
+.visual .img.c { top:-3%; right:37%; }
+.visual .img img {width: 90%;}
+}
+
+
+/* ~1600   기준점 1592 */
+@media screen and (max-width:1600px) {
+    /* menuOpen innerheader */
+    .menuOpen .menuWrap .tit {width: 90%;}
+    .visual .text {padding-left: 5%;}
+    .visual .text .tit1 {font-size: 160px; }
+    .visual .text .tit2 {font-size: 130px; padding-left: 20%;}
+    .visual .text .tit3 {font-size: 160px; padding-left: 40%;}
+    .visual .text .subtext.a { right: 24%;}
+    .visual .text .subtext.b { top:55%; left: 18%;}
+    .visual .img.a {right: -150px;}
+    .visual .img.b {right: -190px;}
+    .visual .img img {width: 87%;}
+    .visual .img.a::before {background-size: 90%;}
+    .visual .img.c::before {right: 100px; background-size: 90%;}
+    .gallery .inner .list {width: 90%; margin: 0 auto;}
+    .gallery .inner .list li {margin-bottom: 130px;}
+    .gallery .inner .list li .img img {width: 90%;}
+    .gallery .inner .list li .txtBox .subtit {font-size: 80px;}
+    .gallery .inner .list li:nth-child(2) .txtBox {width: 37%;}
+    .gallery .inner .list li:nth-child(2) .txtBox .subtit span {padding-right:0;}
+    .gallery .inner .list li:nth-child(2) .txt {padding-left: 25%;}
+    .ncs .subBox .img {width: 120px;}
+    .ncs .subBox .img::after {width: 120px; height: 120px;}
+    }
+    
+
+/* ~1482   기준점 1378px  (마지막 pc모드) */ 
+@media screen and (max-width:1482px) {
+    .visual .img.b {right: -280px; top: 300px;}
+    .visual .img.a {left: 70px;}
+    .visual .text {margin: 0 auto;}
+    .visual .text .subtext.a { display: none;}
+    .section02 .animated-title {font-size: 120px;}
+    .gallery .inner .list {width: 92%;}
+    .gallery .inner .tit .tit1 {font-style: 120px;}
+    .gallery .inner .tit .tit2 {font-style: 100px;}
+    .gallery .inner .tit .tit3 {font-style: 120px;}
+    .gallery .img img {width: 90%;}
+    .gallery .img.c {left: 8%;}
+    .aboutme .inner .textBox {padding-left: 3%;}
+    .ncs .subBox {padding: 400px 0 200px;}
+    .skill .textBox .tit .tit1 {font-size: 130px;}
+    .skill .textBox .tit .tit2 {font-size: 110px;}
+    .skill .textBox .tit .tit3 {font-size: 130px;}
+}
+
+
+/* ~1340 기준점 1220px (태블릿모드 시작) */
+@media screen and (max-width:1340px) {
+    /* innerheader meunOpen */
+    .menuOpen .menuWrap .tit {width: 80%; font-size: 9vw;}
+    .menuOpen .menuWrap .tit li a:after { left: 2.5%;  bottom: 0; }
+    .menuOpen .menuWrap .tit li a:hover:after , .menuOpen .menuWrap .tit li a:focus:after {width: 95%;}
+    
+    .visual .img.b {display: none;}
+    .visual .text {width: 95%; margin: 0 auto; padding-top:185px; padding-left: 0;}
+    .visual .text .tit2 {padding-left: 25%; box-sizing: border-box;}
+    .visual .text .tit3 {padding-left: 50%;box-sizing: border-box;}
+    .visual .text .subtext.b {left: 11%;}
+    .visual .text .subtext.a {display: block; right: 8%;}
+    .visual .img img {width: 83%;}
+    .visual .img.c::before {left: 30%;}
+    .gallery .inner .tit .tit1, .gallery .inner .tit .tit3 {font-size: 110px;}
+    .gallery .inner .tit .tit2 {font-size: 90px;}
+    .gallery .inner .list li .img { margin: 0 auto; float: none;}
+    .gallery .inner .list li .img img {width: 100%; margin: 0 auto;}
+    .gallery .inner .list li .txtBox {float: none; width: 100%;  padding-top: 0; padding-left: 10%; box-sizing: border-box; }
+    .gallery .inner .list li .txtBox .subtit {font-size: 70px; text-align: left; margin-bottom: 25px;}
+    .gallery .inner .list li .txtBox .subtit .mo {padding-left: 100px;}
+    .gallery .inner .list li .txtBox .sub {font-size: 14px; text-align: left; margin-bottom: 40px;}
+    .gallery .inner .list li .txtBox .txt {font-size: 14px; padding-left: 0;}
+    .gallery .inner .list li:nth-child(2) .txtBox  {width: 100%;}
+    .gallery .inner .list li:nth-child(2) .img {float: none;}
+    .gallery .inner .list li:nth-child(2) .txtBox .subtit .mo {padding-left: 150px;}
+    .gallery .inner .list li .txtBox .sub
+    .gallery .inner .list li .txtBox .subtit span {padding: 0;}
+    .aboutme .inner  {width: 90%; margin: 0 auto;}
+    .aboutme .inner .imgBox {float: none; margin: 0 auto; width: 100%;}
+    .aboutme .inner .imgBox .img {width: 700px; margin: 0 auto; align-items: right;}
+    .aboutme .inner .textBox {float: none; width: 100%; padding-top: 0;}
+    .aboutme .inner .textBox .subtext {margin-bottom: 100px;}
+    .aboutme .btn {bottom: -15%;}
+    .ncs .animated-title {font-size: 120px;}
+    .ncs .subBox {max-width: 800px;}
+    .ncs .subBox .img {width: 100px; height: 100px;}
+    .ncs .subBox .img::after {width: 100px; height: 100px;}
+    .skill {padding: 50px 0 80px;}
+    .skill .textBox {width: 65%;}
+    .skill .textBox .icon .imgC {top: 24px; left: 36%;}
+    .skill .textBox .icon .imgC img {width: 85%;}
+    .skill .textBox .icon .imgA img {width: 90%;}
+    .skill .textBox .tit {padding: 263px 0 0;}
+    .skill .textBox .tit .tit1, .skill .textBox .tit .tit3 {font-size: 120px;}
+    .skill .textBox .tit .tit2 {font-size: 100px; padding-left: 0; text-align: center;}
+    .skill .textBox .tit .tit3 {text-align: right;}
+    .skill .gauge li {width: 80%;}
+    footer .cover {width: 105vw;height: 110px;  padding-top: 0px; line-height: 110px;}
+    footer .cover ul { font-size: 40px;}
+    footer .cover ul li {margin: 0px 60px; }
+    footer .cover ul li:after { top: 20%; left: -60px; width: 3px; height: 60%;}
+    footer .cover ul li span { font-size: 45px; padding-top: none;}
+    footer .icon {text-align: right;}
+    footer .inner {width: 80%; margin: 0 auto; text-align: center; padding-top: 200px;}
+    footer .inner .left {float: none; width: 100%; margin: 0 auto; }
+    footer .inner .left .tit1 {padding-right:160px;}
+    footer .inner .left .subtext {transform: translateY(-100px); text-align: left; padding-left: 30px;}
+    footer .icon .imgA {top: 203px; right: -224px;}
+    footer .icon .imgB {top: 166px; right: -269px;}
+    footer .inner .right {float: none; width: 100%; margin: 0 auto;}
+
+    /* footer animation */
+    footer .inner .left.motion .tit1  {animation-name: slide-up ; animation-duration: 0.5s;}
+    footer .inner .left.motion .tit2  {animation-name: slide-up ; animation-duration: 0.6s;}
+    footer .inner .left.motion .subtext  {animation-name: slide-up ; animation-duration: 0.7s;}
+    footer .inner .right.motion .txt  {animation-name: slide-up ; animation-duration: 0.8s;}
+    footer .inner .right.motion .txt:nth-child(2)  {animation-name: slide-up ; animation-duration: 0.9s;}
+    footer .inner .right.motion .address  {animation-name: slide-up ; animation-duration: 1.0s;}
+}
+
+
+/* ~1220  기준점 1000px */
+@media screen and (max-width:1220px) {
+    /* innerheader */
+    .innerHeader {padding-top: 24px; height: 85px;}
+    .innerHeader .logo {font-size: 24px;}
+    .innerHeader .gnb > li:nth-child(1) > a {font-size: 17px; padding: 13px 20px;}
+    .menuOpen a.open {font-size: 24px;}
+    .innerHeader .menuWrap .gnb {padding-top: 24px;}
+    .innerHeader .menuWrap .gnb > li:nth-child(1) > a {font-size: 17px; padding: 13px 20px;}
+    .innerHeader .menuWrap .gnb > li:nth-child(2) > a {font-size: 24px;}
+    
+    .visual .text.pc {display: none;}
+    .visual .text.mo {display: block;}
+    .visual .text {width: 82%; margin: 0 auto; line-height: 0.9; padding-top: 10vw; position: relative;  margin-bottom: 100px; }
+    .visual .text .tit4 {font-size: 15vw; letter-spacing: 0px; padding-left:0%; }
+    .visual .text .tit4 .mobr {display: block; text-align: right;}
+    .visual .text .tit5 {font-size: 13vw; letter-spacing: -5px; text-align: center;}
+    .visual .text .tit6 {font-size: 15vw;letter-spacing: -5px; text-align: right; padding-right: 0.5vw;}
+    .visual .text .subtext.a {font-size: 1.1vw; top:15vw; right: 30vw;  }
+    .visual .text .subtext.b {font-size: 1.1vw; top:39vw; left:0.5vw; }
+    .visual .img.c {right: 36%;}
+    .visual .img.a {display: none;}
+    /* animaation */
+    .visual.motion .text .tit4 {animation-name: textAni ; animation-duration: 0.8s  }
+    .visual.motion .text .tit5 {animation-name: textAni ; animation-duration: 1.0s  }
+    .visual.motion .text .tit6 {animation-name: textAni ; animation-duration: 1.2s  }
+    .ncs .subBox .txt {font-size: 2vw;}
+    .ncs .mySwiper {overflow: visible;}
+    .ncs .swiper-slide {transform: scale(1);}
+    .ncs .swiper-slide.swiper-slide-active {transform: scale(1.5); }
+    .ncs .swiper-button-next {display: none; }
+    .ncs .swiper-button-prev {display: none; }
+    .skill {padding: 50px 0 160px;}
+    .skill .textBox {width: 70%;    margin-bottom: 50px;}
+    .skill .gauge {display: block; width: 870px; margin: 0 auto; padding: 0; overflow: hidden; justify-content: space-between; }
+    .skill .gauge li {float: left;  margin-bottom: 50px;  width: 377px; height: 577px;}
+    .skill .gauge li img {width: 160px; height: 160px; }
+    .skill .gauge.motion {animation-name: slide-up ;  animation-duration: 0.6s; }
+    footer {padding: 365px 0 200px;}
+}
+
+
+/* ~898  기준점 800px (모바일시작) */
+@media screen and (max-width:898px) {
+    /* innerheader */
+    /* 메뉴열었을 때 회전하는 img */
+    .menuOpen .menuWrap.on:before {display: none; }
+    .menuOpen .menuWrap .tit {width: 100%;}
+    .innerHeader {padding-top: 20px; height: 75px;}
+    .innerHeader .logo {font-size: 21px; font-weight: 400;}
+    .innerHeader .gnb > li:nth-child(1) > a {font-size: 17px; padding: 13px 20px; opacity: 0;}
+    .menuOpen a.open {font-size: 20px; font-weight: 400; margin-right: 0;}
+    .innerHeader .menuWrap .gnb {padding-top: 20px;}
+    .innerHeader .menuWrap .gnb > li:nth-child(1) > a {font-size: 17px; padding: 13px 20px; opacity: 0;}
+    .innerHeader .menuWrap .gnb > li:nth-child(2) > a {font-size: 21px; font-weight: 400;}
+    .menuOpen .menuWrap .close.img {top: 90%;}
+    .menuOpen .menuWrap .tit li a:after { left: 0;  bottom: 0; }
+    .menuOpen .menuWrap .tit {font-size: 75px; width: 85%;}
+    .menuOpen .menuWrap .tit li .mo {display: block;}
+    .visual .img.c {display: none;}
+    .visual .text.mo {padding-top: 20vw; width: 95%;}
+    .visual .text .subtext.a {top: 25vw;}
+    .visual .text .subtext.b {top: 49vw;}
+    .section02 {padding: 70px 0 400px;}
+    .section02 .move {height: 430px;}
+    .section02 .txt {font-size: 2vw; padding-left: 3vw;}
+    .section02 .animated-title {font-size: 90px; letter-spacing: 0;}
+    .aboutme {padding: 50px 0 150px;}
+    .aboutme .inner .tit .tit1,     .aboutme .inner .tit .tit3  {font-size: 11vw; letter-spacing: 0;}
+    .aboutme .inner .tit .tit2 {font-size: 9vw; padding-left: 0; letter-spacing: 0; }
+    .aboutme .inner .imgBox .img {width: 90%; height: auto;  margin: 0 auto;}
+    .aboutme .inner .imgBox .img img {width: 100%;}
+    .aboutme .inner .textBox .sub {font-size: 6vw;}
+    .aboutme .inner .textBox .subtext {font-size: 2.2vw; margin-bottom: 120px;}
+    .gallery {padding: 0 0 400px;}
+    .gallery .inner .tit {margin-bottom: 100px;}
+    .gallery .inner .tit .tit1, .gallery .inner .tit .tit3 {font-size: 12vw; letter-spacing: 0;}
+    .gallery .inner .tit .tit2 {font-size: 9vw;}
+    .gallery .inner .list li .txtBox .subtit {font-size: 9vw;}
+    .gallery .inner .list li .img {width: 95%; height: auto; margin: 0 auto;}
+    .gallery .inner .list li .img img {width: 100%;}
+    .gallery .img.a {top: 15%; left: -2%; display: none;}
+    .gallery .img.b {top: 52%; display: none;}
+    .gallery .img.c {display: none;}
+    .gallery .img img {width: 70%;}
+    .gallery .inner .list li .img img:focus,.gallery .inner .list li .img img:hover {transform: translateX(0);}
+    .gallery .inner .list li:nth-child(2) .img img:focus,.gallery .inner .list li:nth-child(2) .img img:hover {transform: translateX(0);}
+    .ncs .animated-title {font-size: 90px; letter-spacing: none;}
+    .ncs .animated-title .track.b {top: 76px;}
+    .ncs .subBox .img::after {clear: both;}
+    .ncs .subBox {width: 78%; padding: 390px 0 158px;}
+    .ncs .subBox .img {float: none;  width: 75px; margin-bottom: 0;}
+    .ncs .subBox .img::after {width: 75px; height: 75px;}
+    .ncs .subBox .txt {float: none; font-size: 18px;}
+    /* animation */
+    .ncs .subBox .img.motion {animation-name: slide-up ; animation-duration: 0.5s; }
+    .ncs .subBox .txt.motion {animation-name: slide-up ; animation-duration: 0.6s; }
+    
+    .skill {width: 100%;}
+    .skill .textBox {width: 70%; }
+    .skill .textBox .icon {width: 83%;}
+    .skill .textBox .tit .tit1, .skill .textBox .tit .tit3 {font-size: 12vw; letter-spacing: 0;}
+    .skill .textBox .tit .tit2 {font-size: 9vw;}
+    .skill .gauge {width: 534px; }
+    .skill .gauge li {width: 235px; height: 310px; margin: 15px; }
+    .skill .gauge li img {width: 80px; height: 80px; margin: 50px 0 28px;}
+    .skill .gauge li .subtit {font-size: 22px; margin-bottom: 18px;}
+    .skill .gauge li:nth-child(6) .subtit, .skill .gauge li:nth-child(5) .subtit {font-size: 20px;}
+    .skill .gauge li .sub {font-size: 8px;}
+    footer {padding: 250px 0 200px;}
+    footer .cover {width: 105vw; height: 12vw; line-height: 12vw;}
+    footer .cover ul { font-size: 6vw;}
+    footer .cover ul li span { font-size: 6vw;}
+    footer .icon {width: 70px;}
+    footer .icon img {width: 60%;}
+    footer .icon .imgB {top: 182px; right: -351%;}
+    footer .inner .left {margin-bottom: 80px;}
+    footer .inner .left .tit1 {font-size: 20vw; padding-right: 0; text-align: left;}
+    footer .inner .left .tit2 {font-size: 15vw; padding-left: 0; text-align: right;}
+    footer .inner .left .subtext {display: none;}
+
+    .btn {font-size: 19px; padding: 13px 20px; width: 225px; height: auto;}
+    .aboutme .btn {bottom: -22%; height: auto; width: 200px; padding:15px;}
+    }
+    
+    /* ~768  기준점 700px  */
+@media screen and (max-width:768px) {
+    .section02 .txt {font-size: 2.5vw;}
+    footer .inner .right .txt {font-size: 4vw;}
+    footer .inner .right .txt span {font-size: 3.5vw;}
+    footer .inner .right .address {font-size: 4vw;}
+    footer .inner .right .address span {font-size: 3.5vw;}
+}
+
+    /* ~610  기준점 550px  */
+@media screen and (max-width:610px) {
+    .visual .text.mo {padding-top:30vw; width: 95%; line-height: 1;}
+    .visual .text .tit4 {font-size: 18vw;}
+    .visual .text .tit5 {font-size: 15vw; letter-spacing: none; text-align: left; }
+    .visual .text .tit6 {font-size: 18vw; letter-spacing: none;}
+    .visual .text .subtext.a {right: 20vw; top: 30vw; font-size: 1vw;}
+    .visual .text .subtext.b {top: 82vw; left: 10vw; font-size: 1vw;} 
+    .section02 .move {height: 411px;}
+    .section02 .txt {font-size: 15px;}
+    .gallery {padding: 0 0 300px;}
+    .gallery .img.a {display: none;}
+    .gallery .img.b {display: none;}
+    .gallery .img.c {display: none;}
+    .gallery .inner .list li .txtBox .subtit {letter-spacing: -2px;}
+    .gallery .inner .list li .txtBox .subtit .mo {padding-left: 10%;}
+    .gallery .inner .list li:nth-child(2) .txtBox .subtit .mo {padding-left: 20%;}
+    .aboutme {padding: 50px 0 100px;}
+    .aboutme .inner .tit {margin-bottom: 78px;}
+    .aboutme .inner .textBox .icon {width: 100%; margin-bottom: 25px;}
+    .aboutme .inner .textBox .subtext {font-size: 13px;}
+    .aboutme .inner .textBox .icon .imgA img {width: 70%;}
+    .aboutme .inner .textBox .icon .imgB img {width: 70%;}
+    .aboutme .inner .textBox .icon .imgB {top: 12px; left: 40px;}
+    .aboutme .inner .textBox {padding-left: 0;}
+    .ncs {padding: 0 0 330px;}
+    .ncs .mySwiper {margin: 0 auto 130px; }
+    .ncs .subBox {padding: 260px 0 158px;}
+    .ncs .subBox .txt {font-size: 14px;}
+    .ncs .swiper-slide {transform: scale(1.3);}
+    .ncs .swiper-slide.swiper-slide-active {transform: scale(1.8); }
+    .ncs .animated-title {font-size: 80px;}
+    .skill {padding: 0 0 140px;}
+    .skill .textBox .tit {padding: 169px 0 0;}
+    .skill .textBox .icon .imgA {width: 80px; height: 80px;}
+    .skill .textBox .icon .imgC {width: 110px; height: 110px; top: 17px; left: 36%;}
+    footer .icon {display: none;}
+    footer {padding: 250px 0 100px;}
+    footer .inner {padding-top: 100px;}
+
+    .btn {font-size: 18px; padding: 13px 16px; width: 185px; letter-spacing: 0; }
+    .aboutme .btn {height: auto; width: 150px; padding:15px; letter-spacing: 0; }
+
+}
+
+    /* ~530  기준점 480  */
+    @media screen and (max-width:530px) {
+    .skill .gauge {width: 100%; margin: 0 auto;}
+    .skill .gauge li {width: 43%; justify-content: space-between; }
+    }
+
+
+
+    /* ~400   */
+    @media screen and (max-width:400px) {
+        .menuOpen .menuWrap .tit {width: 95%; font-size: 55px;}
+        .visual .text .subtext.a {font-size: 10px; right: 7vw; top: 32vw; opacity:0.5;}
+        .visual .text .subtext.b {font-size: 9px; left: 10vw; top: 87vw; opacity:0.5;}
+        .gallery .inner .list li .txtBox .txt span {display: block;}
+        .ncs .swiper-slide {transform: scale(1.5);}
+        .ncs .swiper-slide.swiper-slide-active {transform: scale(2.3); }
+        .skill .gauge {width: 90%;}
+        .skill .gauge li {width: 90%; }
+        footer .inner .left {width: 80%;}
+
+        }

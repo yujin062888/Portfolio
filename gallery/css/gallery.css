@@ -1,0 +1,365 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@font-face {
+    font-family: 'NewYork' ;
+    src: url(../../font/NewYork-PERSONAL-USE.woff) format('woff');
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../../font/HelveticaNowText-Thin.woff2) format('woff');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../../font/HelveticaNowText-Light.woff2) format('woff');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../../font/HelveticaNowText-Regular.woff2) format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../../font/HelveticaNowText-Medium.woff2) format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../../font/HelveticaNowText-Bold.woff2) format('woff');
+    font-weight: 500;
+}
+
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* 공통폰트 */
+body {font-family: 'Noto Sans KR',sans-serif; font-weight: 500;}
+.ny {font-family: 'NewYork';}
+.hv {font-family: 'HelveticaNowText'; font-weight: 400;}
+.wrap {width: 100%; overflow: hidden;}
+
+/* header */
+header {width: 100%;  z-index: 200;  position: fixed; }
+.innerHeader {width: 95%; margin: 0 auto; padding-top: 38px; box-sizing: border-box; overflow: hidden; height: 110px;  border-bottom: 1px solid #dadada; }
+.innerHeader .logo {float: left; font-size: 28px; font-family: 'HelveticaNowText'; font-weight: 300; line-height: 0.8;   }
+.innerHeader .logo a {display: block; width: 100%; height: 100%; color: #dadada;}
+.innerHeader a .b {padding-left: 15px;}
+.innerHeader .gnb {float: right; }
+.innerHeader .gnb > li {float: left; margin-right: 20px; color: #dadada;}
+.innerHeader .gnb > li > a {display: block; width: 100%; height: 100%; }
+.innerHeader .gnb > li:nth-child(2) { margin-right: 0;}
+.innerHeader .gnb > li:nth-child(1) > a {background: #dadada; color: #252525; padding: 15px 22px; box-sizing: border-box;  border-radius: 30px; font-size: 18px; font-family: 'HelveticaNowText'; font-weight: 300;}
+
+/* fixed header on 붙었을 때  */
+header.on .innerHeader {border-bottom: none; }
+/* header 색상 변경_ white */
+header.white #white {border-bottom: none; color: #dadada;}
+header.white > .innerHeader > .gnb > li:nth-child(1) > a {background: #dadada; color: #252525;}
+/* header 색상 변경_ black */
+header.black #white {border-bottom: none; color: #252525;}
+header.black > .innerHeader > .gnb > li:nth-child(1) > a {background: #252525; color: #fff;}
+header.black .innerHeader > .logo a {color: #252525;}
+
+/* MenuOpen */
+.menuOpen a.open {font-size: 28px; font-family: 'HelveticaNowText'; font-weight: 300; line-height: 0.8; padding-top: 2px; }
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top:0; right: 0; z-index: 200; background: #dadada;}
+.innerHeader .menuWrap .gnb { float:right; padding: 38px 2.5% 0 0; box-sizing: border-box;}
+.innerHeader .menuWrap .gnb > li {float: left; margin-right: 20px; color: #252525;}
+.innerHeader .menuWrap .gnb > li:nth-child(2) {margin-right: 0;}
+.innerHeader .menuWrap .gnb > li > a {display: block; width: 100%; height: 100%; }
+.innerHeader .menuWrap .gnb > li:nth-child(1) > a {background: #252525; color: #dadada; padding: 15px 22px; box-sizing: border-box; border-radius: 30px; font-size: 18px; font-family: 'HelveticaNowText'; font-weight: 300;} 
+.innerHeader .menuWrap .gnb > li:nth-child(2) > a {font-size: 28px;  font-weight: 300; line-height: 0.8; padding-top: 2px; }
+.menuOpen .menuWrap .tit {width: 80%; color: #252525; position: absolute; top:50%; transform: translate(-50%,-50%); left:50%; font-size: 120px; text-align: center;}
+.menuOpen .menuWrap .tit li a {display: block; margin-bottom: 20px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(30px); color: #dadada; }
+.menuOpen .menuWrap .tit li a:after {content: ''; width: 0%; height: 100%; background: #252525;position: absolute; left: 8%;  bottom: 0; transition: all 0.3s; z-index: -1;}
+.menuOpen .menuWrap .tit li a:hover:after , .menuOpen .menuWrap .tit li a:focus:after {width: 80%;}
+/* close btn */
+.menuOpen .menuWrap .close.img {position:absolute; top:50%; transform: translateY(-50%); right:30px; }
+/* MenuOpen 열기작성*/
+.menuOpen .menuWrap {width: 0%; transition: all 0.5s; transform: translateX(100%); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; transform: translateX(0%); transition: all 0.5s; opacity: 1; }
+/* MenuOpen ul li ani */
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;} 
+/* 메뉴열었을 때 회전하는 img */
+.menuOpen .menuWrap.on:before {content: ''; width: 652px; height: 646px; background: url(../img/img_04.png)no-repeat; position: absolute; top: 50%; transform: translateY(-50%); left: 10%; opacity: 0.4; transition: all 0.4s; }
+.menuOpen .menuWrap.on:before {animation : spin-menuwrap 20s infinite linear; }
+
+
+
+
+@keyframes spin-menuwrap {
+    from{transform: translateY(-50%) rotate(0deg);}
+    to{transform: translateY(-50%) rotate(360deg);}
+}
+
+/* animation 공통 */
+@keyframes textAni {
+    0%{opacity: 0;}
+    30%{opacity: 0; transform: translate3d(0,80px,0)skewY(30deg);  transform-origin: bottom left;}
+}
+
+@keyframes slide-up {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateY(150px);}
+}
+@keyframes slide-down {
+    0% {opacity: 0; }
+    30% {opacity: 0; transform: translateY(-150px);}
+}
+
+@keyframes right {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(200px);}
+}
+@keyframes left {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(-200px);}
+}
+
+@keyframes spin {
+    from{transform:  rotate(0deg);}
+    to{transform:  rotate(360deg);}
+}
+
+@keyframes slide-up-bg {
+    0% { transform: translateY(200px); }
+    20% {transform: translateY(200px);}
+}
+
+/* 텍스트 부모 감싸주는 공통 animation */
+.pa {overflow: hidden;} 
+.pa:nth-child(1) {padding-bottom: 18px;}
+
+/* visual */
+.visual {width: 100%; background: url(../img/bg_11.png)no-repeat center/cover; color: #fff; height: 100vh; position: relative; padding: 110px 0 0; transition: all 0.4s; }
+.visual .text {max-width: 1400px; margin: 0 auto; padding-top: 250px; line-height: 0.9;  }
+.visual .text .tit1 {font-size: 175px; letter-spacing: -3px; padding-left: 10%;}
+.visual .text .tit2 {font-size: 150px; letter-spacing: -5px; padding-left: 48%; }
+.visual .text .subtext {font-size: 11px; font-weight: 200; line-height: 1.5; letter-spacing: -3;  padding-left: 15%; opacity: 0.8; transform: translateY(-70px); }
+.visual .img.a {width: 83px; height: 83px;  position: absolute;  bottom:20%; left: -0.5%; transform: rotate(-45deg); transition: all 0.4s; }
+.visual .img.b {width: 83px; height: 83px;  position: absolute;   top:24%; right: -1%; transform: rotate(75deg); transition: all 0.4s; }
+.visual .img img {width: 100%;}
+.visual .binbox {height: 200px; width: 100%; background: transparent;}
+
+/* visual animation */
+.visual.motion .text .tit1 {animation-name: textAni ; animation-duration: 0.8s  }
+.visual.motion .text .tit2 {animation-name: textAni ; animation-duration: 1.0s  }
+.visual.motion .text .subtext {animation-name: slide-up  ; animation-duration: 1.2s;}
+.visual.motion {animation-name: grow ; animation-duration: 1.3s;}
+.visual.motion .img.a {animation: spin 10s linear infinite;}
+.visual.motion .img.b {animation: spin 10s linear infinite;}
+
+@keyframes grow {
+    0% {background-size: 250%; background-position: center ;  background-color: black; }
+    100% {background-size: 100%; }
+}
+
+
+/* clonecording */
+.clonecording {width: 100%;  background: #fff; color: #252525; position: relative; padding: 80px 0 400px; }
+.clonecording::before {content: ''; background: url(../img/bg_22.png)no-repeat ; position: absolute; top: -200px; left: 0; width: 100%; height: 200px; transition: top 0.4s; }
+.clonecording .topBox {width: 1400px;  margin: 0 auto 150px;  overflow: hidden;  }
+.clonecording .topBox .img {float: left; width: 106px; height: 106px; position: relative; margin: 55px 60px 0 ; z-index: 10;}
+.clonecording .topBox .img img {width: 100%;}
+.clonecording .topBox .img::after {content: ''; background: #FFED77; width: 106px; height: 106px; position: absolute; top: 12%; left: 25%; opacity: 0.4; z-index: -1; }
+.clonecording .topBox .txt {float: right; width: 50%; text-align: right; letter-spacing: -1px;}
+.clonecording .topBox .txt .tit1 {font-size: 27px; font-weight: 300;  }
+.clonecording .topBox .txt .tit2 {font-size: 91px; margin-bottom: 15px;}
+.clonecording .topBox .txt .sub {font-size: 16px;  font-weight: 300; }
+
+/* swiper 그대로 */
+.clonecording .mySwiper { position: relative; overflow: visible;}
+.clonecording .swiper-slide {position: relative; }
+
+.clonecording .swiper-slide .imgBox {clip-path: inset(18% 18% 18% 18% round 20px); transition: clip-path 0.6s, margin-top 0.6s; background-image: url(../img/img_bg.png); background-size: 100%; overflow: hidden; }
+.clonecording .swiper-slide .imgBox img {width: 100%; transition: all 0.4s; overflow: hidden; }
+.clonecording .swiper-slide:nth-child(3n) {margin-top: -50px;} 
+.clonecording .swiper-slide:nth-child(4n) {margin-top: 50px;} 
+.clonecording .swiper-slide .textBox {position: absolute; z-index: 2; left: 50%; transform: translate(-50%); bottom: 30%; opacity: 0; transition: opacity 0.4s, bottom 0.4s ; transition-delay: 0.2s;  text-align: center;  }
+.clonecording .swiper-slide .textBox span {display: block; line-height: 1.3; }
+.clonecording .swiper-slide .textBox .title {font-size: 70px; color: #fff; line-height: 1; margin-bottom: 15px;}
+.clonecording .swiper-slide .textBox .text {font-size: 16px; font-weight: 300; color: #fff; opacity: 0.8; }
+.clonecording .swiper-slide .plus {position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); content: url(../img/plus_50.png);
+    width: 50px; height: 50px; background: #fff; border-radius: 50%; opacity: 0; z-index: 100; transition: all 0.5s; }
+
+
+/* swiper-slide-active  */
+.clonecording .swiper-slide.swiper-slide-active .imgBox {clip-path: inset(0% 0% 0% 0% round 0%);}
+.clonecording .swiper-slide.swiper-slide-active .imgBox img {opacity: 0.5; }
+.clonecording .swiper-slide.swiper-slide-active .textBox { opacity: 1;  bottom: 40%;}
+.clonecording .swiper-slide.swiper-slide-active .plus {opacity: 0.85; bottom: 20%; }
+.clonecording .swiper-slide.swiper-slide-active:hover .plus , .clonecording .swiper-slide.swiper-slide-active:focus .plus {background: #FFED77; opacity: 1; bottom: 22%;}
+.clonecording .swiper-slide.swiper-slide-active .imgBox:hover img ,.clonecording .swiper-slide.swiper-slide-active .imgBox:hover img { opacity: 0.3; }
+.clonecording .swiper-slide.swiper-slide-active .imgBox:hover .textBox ,.clonecording .swiper-slide.swiper-slide-active .imgBox:hover .textBox { bottom: 42%; }
+
+/* swiper-pagination */
+.clonecording .swiper-pagination-fraction {position: absolute; bottom: 10%; width: auto; left: 74%; color: transparent;}
+.clonecording .swiper-pagination-fraction::after {content: ''; position: absolute; width: 60%; height: 1px; background: #252525; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+.clonecording .swiper-pagination-current {margin-right: 120px; color: #252525;}
+.clonecording .swiper-pagination-total {color: #252525;}
+
+/* clonecording animation */
+.clonecording.motion::before {animation-name: slide-up-bg ; animation-duration: 0.3s; }
+.clonecording .topBox.motion .img {animation-name: slide-up  ; animation-duration: 0.5s;}
+.clonecording .topBox.motion .txt .tit1 {animation-name: left  ; animation-duration: 0.7s;}
+.clonecording .topBox.motion .txt .tit2 {animation-name: left ; animation-duration: 0.9s;}
+.clonecording .topBox.motion .txt .sub  {animation-name: left ; animation-duration: 1.1s;}
+.clonecording .mySwiper.motion {animation-name: gauge ;  animation-duration: 0.8s; }
+@keyframes gauge  {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(50%) }
+}
+
+
+/* webbanner */
+.webbanner {width: 100%;  background: #dadada; color: #252525; position: relative; padding: 50px 0 400px; }
+.webbanner::before {content: ''; background: url(../img/bg_33.png)no-repeat ; position: absolute; top: -200px; left: 0; width: 100%; height: 200px; }
+.webbanner .topBox {width: 600px;  margin: 0 auto 158px; text-align: center; }
+.webbanner .topBox .img { width: 90px; height: 90px; position: relative; margin: 0 auto ; z-index: 20; margin-bottom: 50px;}
+.webbanner .topBox .img img {width: 100%;}
+.webbanner .topBox .img::after {content: ''; background: #FFED77; width: 90px; height: 90px; position: absolute; top: 12%; left: 25%; opacity: 0.4; z-index: -1; }
+.webbanner .topBox .sub {font-size: 27px;  font-weight: 300; margin-bottom: 10px; letter-spacing: -1px; opacity: 0.9;}
+.webbanner .topBox .tit {font-size: 91px;margin-bottom: 15px; }
+.webbanner .topBox .text {font-size: 16px; font-weight: 300; }
+.webbanner .banner img {width: 100%; }
+.webbanner .text {width: 100%; margin: 0 auto; text-align: center; margin-top: 50px; font-size: 16px;}
+
+/* webbanner animation */
+.webbanner.motion::before {animation-name: slide-up-bg ; animation-duration: 0.3s; }
+.webbanner .topBox.motion .img {animation-name: slide-up  ; animation-duration: 0.5s;}
+.webbanner .topBox.motion .sub {animation-name: slide-up  ; animation-duration: 0.6s;}
+.webbanner .topBox.motion .tit {animation-name: slide-up  ; animation-duration: 0.7s;}
+.webbanner .topBox.motion .text {animation-name: slide-up  ; animation-duration: 0.8s;}
+.webbanner .banner.motion img {animation-name: slide-up  ; animation-duration: 0.8s;}
+.webbanner .text.motion {animation-name: slide-up  ; animation-duration: 0.5s;}
+
+
+
+/* webpage */
+.webpage {width: 100%;  background: #fff; color: #252525; position: relative; padding: 55px 0 260px; }
+.webpage::before {content: ''; background: url(../img/bg_22.png)no-repeat ; position: absolute; top: -200px; left: 0; width: 100%; height: 200px; transition: top 0.4s; }
+.webpage .topBox {width: 1400px;  margin: 0 auto ;  overflow: hidden;  z-index: -1; }
+.webpage .topBox .img {float: left; width: 106px; height: 106px; position: relative; margin: 120px 60px 0 ; z-index: 1;}
+.webpage .topBox .img img {width: 100%;}
+.webpage .topBox .img::after {content: ''; background: #FFED77; width: 106px; height: 106px; position: absolute; top: 22%; left: 25%; opacity: 0.4;  z-index: -1; }
+.webpage .topBox .txt {float: right; padding: 180px 65px; box-sizing: border-box; width: 50%; text-align: right; letter-spacing: -1px; position: relative;  z-index: 1; }
+.webpage .topBox .txt::after {content: ''; background: url(../img/webpage_bg.png)no-repeat center ; width: 559px; height: 555px; position: absolute; top: 0; right: 0;    z-index: -1; }
+.webpage .topBox .txt .tit1 {font-size: 27px; font-weight: 300;  }
+.webpage .topBox .txt .tit2 {font-size: 91px; margin-bottom: 15px;}
+.webpage .topBox .txt .sub {font-size: 16px;  font-weight: 300;}
+
+/* webpage slider js호출 후 디자인 */
+.webpage .bottomBox {width: 1200px; height: 796px;  margin: -170px auto 0 ;  overflow: hidden; position: relative; z-index: 1; }
+.webpage .bottomBox .laptop img {width: 100%;  }
+.webpage .bottomBox .swiper-container {position: absolute; top: 85px; left: 155px; width: 887px; height: 556px; overflow: hidden; background: #000;}
+.webpage .bottomBox .swiper-container img {width: 100%; transition: all 0.4s;}
+
+/* webpage hover효과 */
+.webpage .bottomBox .swiper-container a {display: block; width: 100%; height: 100%; position: relative;}
+.webpage .bottomBox .swiper-container a::after {position: absolute; top: 70%; left: 50%; transform: translate(-50%,-50%); content: url(../img/plus_60.png);
+    width: 60px; height: 60px; background: #FFED77; border-radius: 50%; opacity: 0; z-index: 100; transition: all .7s;}
+.webpage .bottomBox .swiper-container a:hover img, .webpage .bottomBox .swiper-container a:focus img {opacity: 0.4; transform: scale(1.12);}
+.webpage .bottomBox .swiper-container a:hover::after, .webpage .bottomBox .swiper-container a:focus::after {opacity: 1; top: 60%;}
+
+/* webpage animation */
+.webpage.motion::before {animation-name: slide-up-bg ; animation-duration: 0.3s; }
+.webpage .topBox.motion .img {animation-name: slide-up  ; animation-duration: 0.5s;}
+.webpage .topBox.motion .tit1 {animation-name: left  ; animation-duration: 0.7s;}
+.webpage .topBox.motion .tit2 {animation-name: left ; animation-duration: 0.9s;}
+.webpage .topBox.motion .sub  {animation-name: left ; animation-duration: 1.1s;}
+.webpage .topBox.motion .txt::after   {animation-name: grow_2 ; animation-duration: 1.5s;}
+.webpage .bottomBox.motion {animation-name: slide-up  ; animation-duration: 0.8s;}
+
+@keyframes grow_2 {
+    0% {background-size: 0%; background-position: center ;  }
+    100% {background-size: 100%; }
+}
+
+
+/* ncs */
+.ncs {width: 100%; }
+.ncs .img {width: 100%;  z-index: -1; }
+.ncs .img img {width: 100%;}
+.ncs .inner {width: 100%;  background: #252525;  padding-bottom: 340px;}
+.ncs .txtBox {width: 1500px;  margin: -200px auto 0; padding: 100px; box-sizing: border-box; background: #fff; border: 1px solid#252525; display: flex; position: relative;  margin-bottom: 300px; }
+.ncs .txtBox .left {width: 50%;  text-align: center; position: relative;  }
+.ncs .txtBox .left::after {content: ''; position: absolute; top: -10%; right: 0; width: 3px; background: #252525; height: 120%;}
+.ncs .txtBox .left .tit1 {font-size: 91px; margin-bottom: 10px; }
+.ncs .txtBox .left .tit2 {font-size: 20px;  font-weight: 300; letter-spacing: 1px;}
+.ncs .txtBox .right { width: 50%; padding-left: 5%; box-sizing: border-box;}
+.ncs .txtBox .right .sub {font-size: 16px;  font-weight: 300; margin-bottom: 20px;}
+.ncs .txtBox .right .sub:nth-child(2) {font-weight: 500; margin-bottom: 0;}
+
+/* ncs slide */
+.ncs .mySwiper {width: 100%; margin: 0 auto; }
+.ncs .swiper-slide {transform: scale(0.8); transition: transform 0.5s;}
+.ncs .swiper-slide img {width: 100%; }
+.ncs .swiper-slide.swiper-slide-active {transform: scale(1);}
+.ncs .mySwiper .swiper-button-next {position: absolute;  top: 50%; right: 20%; z-index: 500; color: #dadada; font-weight: 800;}
+.ncs .mySwiper .swiper-button-prev {position: absolute;  top: 50%; left: 20%;  z-index: 500; color: #dadada; font-weight: 800;}
+
+/* ncs animation */
+.ncs.motion .img {animation-name: slide-up  ; animation-duration: 0.5s;}
+.ncs .txtBox.motion .left .tit1  {animation-name: right  ; animation-duration: 0.5s;}
+.ncs .txtBox.motion .left .tit2  {animation-name: right ; animation-duration: 0.6s;}
+.ncs .txtBox.motion .right .sub:nth-child(1) {animation-name: left ; animation-duration: 0.5s;}
+.ncs .txtBox.motion .right .sub:nth-child(2) {animation-name: left ; animation-duration: 0.6s;}
+.ncs .mySwiper.motion {animation-name: slide-up ; animation-duration: 0.5s;}
+
+
+
+
+/* 바로가기 버튼 공통 */
+.btn {display: block; text-align: center; margin: 0 auto; width: 270px; height: 65px; font-size: 25px; font-weight: 300; padding: 17px 30px; box-sizing: border-box; border-radius: 50px; background: #252525; color: #ffffff; }
+.btn:hover, .btn:focus {color: #FFED77; }
+.btn.motion {animation-name: slide-up ; animation-duration: 0.5s;}
+
+
+/* contact me  footer - 복붙 */
+footer {width: 100%; background: #dadada; color: #252525; padding: 420px 0 200px; position: relative;}
+/* footer 위 bar maquee 태그 */
+footer .cover {width: 105vw;height: 130px;position: absolute;top: 0;left: -20px;background-color: #fff;border: 1px solid#252525;transform: rotate(-6deg);font-size: 53px;overflow: hidden;padding-top: 7px;}
+footer .cover ul { font-size: 50px; width: 200%;  }
+footer .cover ul li {margin: 30px 60px; position: relative;  float: left;}
+footer .cover ul li:after {content: ''; position: absolute; top: 5px; left: -60px; width: 5px; height: 80%; background: #252525;}
+footer .cover ul li span {font-family: 'NewYork'; font-size: 60px; padding-top: none;}
+footer .cover:nth-child(1) ul li {float: right;}
+footer .cover:nth-child(2) {transform: rotate(6deg);} 
+
+footer .icon {width: 200px; margin: 0 auto;  position: relative;}
+footer .icon .imgA {position: absolute; top: 180px; right: 170px; width: 90px; height: 90px; }
+footer .icon .imgB {position: absolute; top: 145px; right: 125px; width: 62px; height: 62px; }
+footer .icon img {width: 100%;}
+footer .inner {width: 1400px; margin: 0 auto ; padding-top: 250px; overflow: hidden; }
+footer .inner .left {float:left; width: 45%;  line-height: 0.8; }
+footer .inner .left .tit1 {font-size: 162px; letter-spacing: -8px;  }
+footer .inner .left .tit2 {font-size: 119px; font-weight: 300; padding-left: 160px; letter-spacing: -8px; margin-bottom: 30px;}
+footer .inner .left .subtext {font-size: 14px; font-weight: 300; text-align: right; line-height: 1.3; padding-right: 80px;}
+footer .inner .right {float:right; width: 42%; overflow: hidden; }
+footer .inner .right .txt {margin:30px 0; font-size: 30px; font-weight: 400; }
+footer .inner .right .txt span {display: block; opacity: 0.6; font-size: 25px; font-weight: 300; }
+footer .inner .right .address {font-family: 'Noto Sans KR',sans-serif;  font-weight: 500; font-size: 30px;}
+footer .inner .right .address span {display: block; font-family: 'HelveticaNowText'; opacity: 0.6; font-size: 25px; font-weight: 300; }
+
+/* footer animation */
+footer.motion .inner .left .tit1 {animation-name: right; animation-duration: 0.7s;}
+footer.motion .inner .left .tit2 {animation-name: right; animation-duration: 0.9s;}
+footer.motion .inner .left .subtext {animation-name: right; animation-duration: 1.1s;}
+footer.motion .inner .right .txt {animation-name: left; animation-duration: 0.7s;}
+footer.motion .inner .right .txt:nth-child(2) {animation-name: left; animation-duration: 0.9s;}
+footer.motion .inner .right .address {animation-name: left; animation-duration: 1.1s;}
+

@@ -1,0 +1,464 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@font-face {
+    font-family: 'NewYork' ;
+    src: url(../font/NewYork-PERSONAL-USE.woff) format('woff');
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Thin.woff2) format('woff');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Light.woff2) format('woff');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Regular.woff2) format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Medium.woff2) format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'HelveticaNowText' ;
+    src: url(../font/HelveticaNowText-Bold.woff2) format('woff');
+    font-weight: 500;
+}
+
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* 공통폰트 */
+body {font-family: 'Noto Sans KR',sans-serif; font-weight: 500;}
+.ny {font-family: 'NewYork';}
+.hv {font-family: 'HelveticaNowText'; font-weight: 400;}
+.wrap {width: 100%; overflow: hidden;}
+
+/* header */
+header {width: 100%;  z-index: 200;  position: fixed; }
+.innerHeader {width: 95%; margin: 0 auto; padding-top: 38px; box-sizing: border-box; overflow: hidden; height: 110px;  border-bottom: 1px solid #dadada; }
+.innerHeader .logo {float: left; font-size: 28px; font-family: 'HelveticaNowText'; font-weight: 300; line-height: 0.8;   }
+.innerHeader .logo a {display: block; width: 100%; height: 100%; color: #dadada;}
+.innerHeader a .b {padding-left: 15px;}
+.innerHeader .gnb {float: right; }
+.innerHeader .gnb > li {float: left; margin-right: 20px; color: #dadada;}
+.innerHeader .gnb > li > a {display: block; width: 100%; height: 100%; }
+.innerHeader .gnb > li:nth-child(2) { margin-right: 0;}
+.innerHeader .gnb > li:nth-child(1) > a {background: #dadada; color: #252525; padding: 15px 22px; box-sizing: border-box;  border-radius: 30px; font-size: 18px; font-family: 'HelveticaNowText'; font-weight: 300;}
+
+/* fixed header on 붙었을 때  */
+header.on .innerHeader {border-bottom: none; }
+/* header 색상 변경_ white */
+header.white #white {border-bottom: none; color: #dadada;}
+header.white > .innerHeader > .gnb > li:nth-child(1) > a {background: #dadada; color: #252525;}
+/* header 색상 변경_ black */
+header.black #white {border-bottom: none; color: #252525;}
+header.black > .innerHeader > .gnb > li:nth-child(1) > a {background: #252525; color: #fff;}
+header.black .innerHeader > .logo a {color: #252525;}
+
+/* MenuOpen */
+.menuOpen a.open {font-size: 28px; font-family: 'HelveticaNowText'; font-weight: 300; line-height: 0.8; padding-top: 2px; }
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top:0; right: 0; z-index: 200; background: #dadada;}
+.innerHeader .menuWrap .gnb { float:right; padding: 38px 2.5% 0 0; box-sizing: border-box;}
+.innerHeader .menuWrap .gnb > li {float: left; margin-right: 20px; color: #252525;}
+.innerHeader .menuWrap .gnb > li:nth-child(2) {margin-right: 0;}
+.innerHeader .menuWrap .gnb > li > a {display: block; width: 100%; height: 100%; }
+.innerHeader .menuWrap .gnb > li:nth-child(1) > a {background: #252525; color: #dadada; padding: 15px 22px; box-sizing: border-box; border-radius: 30px; font-size: 18px; font-family: 'HelveticaNowText'; font-weight: 300;} 
+.innerHeader .menuWrap .gnb > li:nth-child(2) > a {font-size: 28px;  font-weight: 300; line-height: 0.8; padding-top: 2px; }
+.menuOpen .menuWrap .tit {width: 80%; color: #252525; position: absolute; top:50%; transform: translate(-50%,-50%); left:50%; font-size: 120px; text-align: center;}
+.menuOpen .menuWrap .tit li a {display: block; margin-bottom: 20px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(30px); color: #dadada; }
+.menuOpen .menuWrap .tit li a:after {content: ''; width: 0%; height: 100%; background: #252525;position: absolute; left: 8%;  bottom: 0; transition: all 0.3s; z-index: -1;}
+.menuOpen .menuWrap .tit li a:hover:after , .menuOpen .menuWrap .tit li a:focus:after {width: 80%;}
+/* close btn */
+.menuOpen .menuWrap .close.img {position:absolute; top:50%; transform: translateY(-50%); right:30px; }
+/* MenuOpen 열기작성*/
+.menuOpen .menuWrap {width: 0%; transition: all 0.5s; transform: translateX(100%); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; transform: translateX(0%); transition: all 0.5s; opacity: 1; }
+/* MenuOpen ul li ani */
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;} 
+/* 메뉴열었을 때 회전하는 img */
+.menuOpen .menuWrap.on:before {content: ''; width: 652px; height: 646px; background: url(../img/img_04.png)no-repeat; position: absolute; top: 50%; transform: translateY(-50%); left: 10%; opacity: 0.4; transition: all 0.4s; }
+.menuOpen .menuWrap.on:before {animation : spin-menuwrap 20s infinite linear; }
+
+
+
+@keyframes spin-menuwrap {
+    from{transform: translateY(-50%) rotate(0deg);}
+    to{transform: translateY(-50%) rotate(360deg);}
+}
+
+/* animation 공통 */
+@keyframes textAni {
+    0%{opacity: 0;}
+    30%{opacity: 0; transform: translate3d(0,80px,0)skewY(30deg);  transform-origin: bottom left;}
+}
+
+@keyframes slide-up {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateY(150px);}
+}
+@keyframes slide-down {
+    0% {opacity: 0; }
+    30% {opacity: 0; transform: translateY(-150px);}
+}
+
+@keyframes right {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(200px);}
+}
+@keyframes left {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(-200px);}
+}
+
+@keyframes spin {
+    from{transform:  rotate(0deg);}
+    to{transform:  rotate(360deg);}
+}
+
+@keyframes slide-up-bg {
+    0% { transform: translateY(200px); }
+    20% {transform: translateY(200px);}
+}
+
+
+/* 공통 inner */
+.inner {width: 1500px; margin: 0 auto;}
+/* 텍스트 부모 감싸주는 공통 animation */
+.pa {overflow: hidden;} 
+.pa:nth-child(3) {padding-bottom: 40px;}
+.pa:nth-child(2) {padding-bottom: 12px;}
+
+/* visual */
+.visual {width: 100%; background: #252525; color: #dadada;  position: relative; padding: 0 0 200px; }
+.visual .inner {padding: 260px 0 150px; box-sizing: border-box; position: relative; }
+.visual .inner .img.b {position: absolute; top: -38%; left: 50%; transform: translateX(-50%); }
+.visual .inner .textBox { width: 70%; position: relative; line-height: 1; z-index: 2;}
+.visual .inner .textBox .tit1 {font-size: 177px;  letter-spacing: -3px; }
+.visual .inner .textBox .tit2 {font-size: 139px;  letter-spacing: -7px; padding-left: 5%;  }
+.visual .inner .textBox .tit3 {font-size: 177px; padding-left: 20%;  color: #BB9FFF; }
+.visual .inner .textBox .subtext {font-size: 11px; line-height: 1.6; text-align: left; opacity: 0.7; position: absolute; top: 6% ; right: 45%; font-weight: 100;}
+.visual .inner .imgBox {position: absolute; top: 200px; right: 0;}
+.visual .inner .imgBox .img.a {width: 676px; height: 670px;}
+.visual .inner .imgBox .img.a img {width: 100%;}
+
+/* visual animation */
+.visual.motion .textBox .tit1 {animation-name: textAni ; animation-duration: 0.8s  }
+.visual.motion .textBox .tit2 {animation-name: textAni ; animation-duration: 1.0s  }
+.visual.motion .textBox .tit3 {animation-name: textAni ; animation-duration: 1.2s  }
+.visual.motion .textBox .subtext {animation-name: slide-up ; animation-duration: 1.2s; }
+.visual.motion .imgBox .img.a {animation-name: slide-up ; animation-duration: 1.3s; }
+.visual.motion .inner .img.b {animation-name: slide-down_2 ; animation-duration: 1.3s; }
+
+@keyframes slide-down_2 {
+    0% {opacity: 0; transform: translateX(-50%) translateY(-150px);}
+    30% {opacity: 0; transform: translateX(-50%) translateY(-150px);}
+}
+
+
+/* aboutme */
+.aboutme {width: 100%;  background: #dadada; color: #252525; position: relative; padding-bottom:350px; }
+.aboutme::before {content: ''; background: url(../img/aboutme/bg_11.png)no-repeat ; position: absolute; top: -200px; left: 0; width: 100%; height: 200px; }
+.aboutme .inner {width: 1400px; overflow: hidden; position: relative;}
+.aboutme .inner .fix { width: 50%; height: 100%; position: absolute; bottom: 0; left: 0;}
+.aboutme .inner .fix .img {width: 716px; height: 697px; position: relative; opacity: 0; transition: all 0.2s; }
+.aboutme .inner .fix .img img {width: 100%;}
+.aboutme .inner .fix .img.on {position: fixed; bottom: 50%; transform: translateY(50%); opacity: 1; transition: all 0.2s;}
+.aboutme .inner .fix .img::after {content: ''; position: absolute; top: 0; right: 13%;  background: url(../img/aboutme/line_li.png)no-repeat center/cover; width: 549px; height: 651px; opacity: 0; transform: scale(0.3); transition: all 0.4s;} 
+.aboutme .inner .fix .img.on::after {opacity: 1; transform: scale(1); transition: all 0.4s;}
+.aboutme .inner .fix_right {float: right; width: 50%; padding-left: 85px; box-sizing: border-box; margin-top: 20%; overflow: hidden;}
+.aboutme .inner .fix_right .textBox {width: 100%; margin-bottom: 50px; line-height: 0.75; }
+.aboutme .inner .fix_right .textBox .tit1 {font-size: 150px; letter-spacing: 0.8; }
+.aboutme .inner .fix_right .textBox .tit2 {font-size: 115px; font-weight: 300; padding-left: 64%;}
+.aboutme .inner .fix_right .tit {font-size: 51px; font-weight: 500; margin-bottom: 50px;  line-height: 1.2; }  
+.aboutme .inner .fix_right .sub {font-size: 16px; font-weight: 300; letter-spacing: 0.8; margin-bottom: 70px; padding-left: 30px;}
+.aboutme .inner .fix_right .left {float: left; width: 30%;  padding-left: 50px; box-sizing: border-box; position: relative; }
+.aboutme .inner .fix_right .left::after {content: ''; width: 5px; height: 100%; position: absolute; top: 0; left: 15px; background: #BB9FFF;}
+.aboutme .inner .fix_right .left .circle {width: 101px; height: 38px; text-align: center; background: #BB9FFF; border-radius: 50px; padding-top: 6px; box-sizing: border-box; margin-bottom: 25px;}
+.aboutme .inner .fix_right .left .circle.b {margin-bottom: 82px;}
+.aboutme .inner .fix_right .left .circle.c {margin-bottom: 137px;}
+.aboutme .inner .fix_right .left .circle.d {margin-bottom: 0;}
+.aboutme .inner .fix_right .right {float: right; width: 70%; box-sizing: border-box;  padding-top: 5px; }
+.aboutme .inner .fix_right .right p {margin-bottom: 32px; line-height: 1.8;}
+
+/* 배경 공통 animation */
+.aboutme.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+
+/* aboutme animation */
+.aboutme .inner .fix_right.motion .textBox .tit1 {animation-name: textAni ; animation-duration: 0.6s  }
+.aboutme .inner .fix_right.motion .textBox .tit2 {animation-name: textAni  ; animation-duration: 0.8s  }
+.aboutme .inner .fix_right .tit.motion {animation-name: slide-up  ; animation-duration: 0.7s;}
+.aboutme .inner .fix_right .sub.motion {animation-name: slide-up  ; animation-duration: 0.8s; }
+.aboutme .inner .fix_right .submit .left.motion {animation-name: slide-up  ; animation-duration: 0.5s; }
+.aboutme .inner .fix_right .submit .right.motion {animation-name:  slide-up ; animation-duration: 0.8s; }
+
+
+
+/* interesting */
+.interesting {width: 100%;  background: #252525; color: #dadada; position: relative; padding: 100px 0 450px; }
+.interesting::before {content: ''; background: url(../img/aboutme/bg_22.png)no-repeat ; position: absolute; top: -200px; left: 0; width: 100%; height: 200px; }
+.interesting .inner {width: 1500px;  margin: 0 auto;  }
+.interesting .inner .topBox {width: 100%; overflow: hidden; margin-bottom: 210px; }
+.interesting .inner .topBox .img {float: left; width: 106px; height: 106px; position: relative; z-index: 100; margin: 102px 60px 0 ;}
+.interesting .inner .topBox .img img {width: 100%;}
+.interesting .inner .topBox .img::after {content: ''; background: #BB9FFF; width: 106px; height: 106px; position: absolute; top: 12%; left: 25%; opacity: 0.4; z-index: -1; }
+.interesting .inner .topBox .textBox {float: right; text-align: right; position: relative; line-height: 0.9;}
+.interesting .inner .topBox .textBox .tit1 {font-size: 99px; letter-spacing: -3px; }
+.interesting .inner .topBox .textBox .tit2 {font-size: 133px; letter-spacing: -3px; }
+.interesting .inner .topBox .textBox .tit3 {font-size: 99px; letter-spacing: -3px; text-align: left; line-height: 1;}
+.interesting .inner .topBox .textBox .subtext {position: absolute; bottom: 70px; right: 0; font-weight: 300;}
+.interesting ul.slide {width: 100%; margin: 0 auto; position: relative;}
+.interesting ul.slide li {width: 466px; height: 794px; background: url(../img/aboutme/inter_box.png)no-repeat center/cover; padding: 124px 0 162px; box-sizing: border-box; text-align: center; margin-right: 52px; text-align: center; }
+.interesting ul.slide li:nth-child(3n) {margin-right: 0px;}
+.interesting ul.slide li .img {width: 250px; height: 250px; margin: 0 auto; position: relative; margin-bottom: 55px;}
+.interesting ul.slide li .img::after {content: ''; width: 330px; height: 10px; position: absolute; bottom: -6px ; left: 50%; transform: translateX(-50%); z-index: 100; background: #BB9FFF; border-radius: 50px;}
+.interesting ul.slide li .img img {width: 100%;}
+.interesting ul.slide li .txt {font-size: 16px; font-weight: 300; color: #252525;}
+/* .slick-arrow 위치조정 */
+.interesting .slick-arrow {position: absolute; top: 45%;  border: none; text-indent: -9999px;  z-index: 100; cursor: pointer;  z-index: 2000;}
+.interesting .slick-arrow::after {content: url(../img/aboutme/arr_prev.png);  text-indent: 0; position: absolute; top: 0; left: 0; transition: color 0.4s;}
+.interesting .slick-arrow.slick-prev {left:-7%;}
+.interesting .slick-arrow.slick-next {right:-4%;}
+.interesting .slick-arrow.slick-next::after {content: url(../img/aboutme/arr_next.png); }
+.interesting .slick-arrow:hover,.interesting .slick-arrow:focus {color: #BB9FFF; transition: all 0.4s;}
+
+/* interesting animation */
+.interesting.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s;}
+.interesting.motion .inner .topBox {animation-name: slide-up ; animation-duration: 0.4s;}
+.interesting ul.slide.motion {animation-name: slide-up ; animation-duration: 0.7s;}
+.interesting ul.slide.motion li .img {animation-name: scale ; animation-duration: 0.5s; animation-delay: 0.2s;}
+
+@keyframes  scale {
+    0% {opacity: 0; transform:scale(0) }
+    30% {opacity: 0; transform:scale(0) }
+}
+
+
+/* timeLine */
+.timeLine {width: 100%;  background: #fff; color: #252525; position: relative; padding: 100px 0 500px;  }
+.timeLine::before {content: ''; background: url(../img/aboutme/bg_33.png)no-repeat ; position: absolute; top: -200px; left: 0; width: 100%; height: 200px; }
+.timeLine .inner {width: 1472px; margin: 0 auto; }
+.timeLine .inner .txtBox {text-align: center; margin-bottom: 348px;}
+.timeLine .inner .txtBox .tit {font-size: 100px; line-height: 1; margin-bottom: 10px;}
+.timeLine .inner .txtBox .tit span {display: block; font-size: 120px; font-weight: 300;}
+.timeLine .inner .txtBox .sub {font-size: 20px; font-weight: 400;}
+.timeLine .inner .time {width: 100%; position: relative; }
+.timeLine .inner .time .line {width: 100%; height: auto;}
+.timeLine .inner .time .line path {fill: none; stroke: #252525; stroke-width: 3; stroke-dasharray: 5897; stroke-dashoffset: 0; animation: dishline 4s linear ;animation-play-state: paused;}
+
+@keyframes dishline {
+    0% {stroke-dashoffset: 5897;}     
+    100% {stroke-dashoffset: 0;}
+}
+
+.timeLine .inner .time li {width: 700px;   position: absolute; }
+.timeLine .inner .time li .img {float:right; }
+.timeLine .inner .time li .img img {width: 100%;}
+.timeLine .inner .time li .txt {float:left; text-align: right;  }
+.timeLine .inner .time li .txt .tit {font-size: 45px;}
+.timeLine .inner .time li .txt .sub {font-size: 16px; font-weight: 300;}
+.timeLine .inner .time li.b .img {float:left; }
+.timeLine .inner .time li.b .txt {float:right; text-align: left; }
+.timeLine .inner .time li:nth-child(1) {width: 470px; top: -13%; left: 31%;}
+.timeLine .inner .time li:nth-child(2) {width: 510px; top: 15.6%; left: 21%;}
+.timeLine .inner .time li:nth-child(3) {width: 440px; top: 35.6%; left: 59%;}
+.timeLine .inner .time li:nth-child(4) {width: 560px; top: 34.1%; left: 12%;}
+.timeLine .inner .time li:nth-child(5) {width: 440px; top: 53%; left: 7%;}
+.timeLine .inner .time li:nth-child(6) {width: 420px; top: 56%; left: 42%;}
+.timeLine .inner .time li:nth-child(7) {width: 440px; top: 76%; left: 40%;}
+.timeLine .inner .time li:nth-child(8) {width: 500px; top: 99%; left: 29%;}
+
+/* timeLine 꾸며주는 obj 위치값 + animation */
+.color1 {position: absolute; top: 29%; left: 62%; animation: left  1.4s linear ; animation-delay: 0.5s; animation-play-state: paused; }
+.color2 {position: absolute; top: 63%; left: -2%; animation: slide-up  1.4s linear ; animation-play-state: paused;}
+.color3 {position: absolute; top: 68.8%; left: 66.0%; animation: right  1.4s linear ; animation-play-state: paused;}
+.arr1 {position: absolute; top: 2%; left: 65%; }
+.arr2 {position: absolute; top: 18%; left: 15%;}
+.arr3 {position: absolute; top: 38%; right:5%;}
+.cloud {position: absolute; top: 45%; left: -5%; }
+.arr4 {position: absolute; top: 58%; left: 3.5%;}
+.arr5 {position: absolute; top: 91%; left: 25%;}
+.cir {position: absolute; top: 67%;  right:22%; }
+.line1 {position: absolute; top: 5%; left: 35%; animation: spin 5s linear infinite; animation-play-state: paused;}
+.line2 {position: absolute; top: 74%; left: 25%; animation: spin 5s linear infinite; animation-play-state: paused;}
+
+.timeLine.motion .arr1 {animation: bounceIn 2s alternate infinite ;}
+.timeLine.motion .arr2 {animation: bounceIn 2s alternate infinite ;}
+.timeLine.motion .arr3 {animation: bounceIn 2s alternate infinite ;}
+.timeLine.motion .arr4 {animation: bounceIn 2s alternate infinite ;}
+.timeLine.motion .arr5 {animation: bounceIn 2s alternate infinite ;}
+.timeLine.motion .cloud {animation: bounce_3  2s infinite ; }
+.timeLine.motion .cir {animation: bounce_3  2s infinite ; }
+
+/* timeLine animation */
+.timeLine.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+.timeLine .inner .txtBox.motion .tit span {animation-name: slide-up ; animation-duration: 0.6s; }
+.timeLine .inner .txtBox.motion .tit {animation-name: slide-up ; animation-duration: 0.7s; }
+.timeLine .inner .txtBox.motion .sub {animation-name: slide-up ; animation-duration: 0.8s; }
+
+.timeLine .obj01 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt01 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s;}
+.timeLine .obj02 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt02 {animation-name: right ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s; }
+.timeLine .obj03 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt03 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s; }
+.timeLine .obj04 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt04 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s;}
+.timeLine .obj05 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt05 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s;}
+.timeLine .obj06 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt06 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s;}
+.timeLine .obj07 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt07 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s;}
+.timeLine .obj08 {animation-name: bounce_2 ; animation-duration: 1s; animation-play-state: paused; }
+.timeLine .objtxt08 {animation-name: left ; animation-duration: 1.2s; animation-play-state: paused; animation-delay: 0.2s;}
+
+@keyframes bounce_2 {
+    0% {opacity: 0; transform: translateY(50px);}     
+    10% {opacity: 1; transform: translateY(50px);}     
+    30% {opacity: 1; transform: translateY(-60px);}     
+    50% {opacity: 1; transform: translateY(0);}     
+    60% {opacity: 1; transform: translateY(-25px);}     
+    70% {opacity: 1; transform: translateY(10px);}     
+    80% {opacity: 1; transform: translateY(-5px);}     
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes bounce_3 {
+    0% {opacity: 1; transform: translateY(0);}
+    25% {opacity: 1; transform: translateY(10px);}     
+    50% {opacity: 1; transform: translateY(0);}     
+    75% {opacity: 1; transform: translateY(5px);}      
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+
+
+/* 바로가기 버튼 공통 */
+.btn {display: block; text-align: center; margin: 0 auto; width: 270px; height: 65px; font-size: 25px; font-weight: 300; padding: 17px 30px; box-sizing: border-box; border-radius: 50px; background: #252525; color: #ffffff; transition: all 0.4s;}
+.btn:hover, .btn:focus {color: #BB9FFF; }
+.btn.motion {animation-name: slide-up ; animation-duration: 0.5s;}
+
+
+/* skill */
+.skill {width: 100%; padding: 100px 0 100px; position: relative; background: #252525; color: #dadada;}
+.skill::before {content: ''; background: url(../img/bg_11.png)no-repeat center/cover; position: absolute; top: -200px; left: 0; width: 100%; height: 200px;}
+.skill .textBox {width: 850px; margin: 0 auto; }
+.skill .textBox .icon {width: 40%; margin: 0 auto; position: relative;}
+.skill .textBox .icon .imgA {width: 106px; height: 106px; position: absolute; top: 0; left: 20%; }
+.skill .textBox .icon .imgB {width: 106px; height: 106px; position: absolute; top: 0; left: 20%;  display: none;}
+.skill .textBox .icon .imgC {width: 147px; height: 147px; position: absolute; top: 25px; left: 39%; }
+.skill .textBox .tit {padding: 300px 0 0 ; box-sizing: border-box; line-height: 1;}
+.skill .textBox .tit .pa:nth-child(1) {padding-bottom: 2px;}
+.skill .textBox .tit .tit1 {font-size: 140px; }
+.skill .textBox .tit .tit2 {font-size: 105px; padding-left: 12%; box-sizing: border-box; line-height: 0.9;}
+.skill .textBox .tit .tit3 {font-size: 140px;  padding-left: 73%; box-sizing: border-box;}
+.skill .gauge { display: flex; flex-wrap: nowrap; padding: 12% 30%; box-sizing: border-box;}
+.skill .gauge li {flex-shrink: 0 !important; width: 377px; height: 577px;  border: 1px solid #dadada; border-radius: 60px;  margin: 0 28px;  text-align: center;  }
+.skill .gauge li img {width: 180px; height: 180px; margin: 80px 0 54px; }
+.skill .gauge li .subtit {font-size: 37px; margin-bottom: 41px; letter-spacing: -1px;}
+.skill .gauge li .sub {font-size: 15px; font-weight: 300;}
+.skill .gauge li:nth-child(6) .subtit,.skill .gauge li:nth-child(5) .subtit {font-size: 30px;}
+
+/* skill animation */
+.skill.motion::before {animation-name: slide-up-bg ; animation-duration: 0.2s; }
+.skill.motion .textBox .icon .imgA {animation-name: slide-up ;  animation-duration: 0.5s;}
+.skill.motion .textBox .icon .imgC {animation-name: slide-up ; animation-duration: 0.6s;}
+.skill .textBox .tit.motion .tit1 {animation-name: textAni ; animation-duration: 0.7s }
+.skill .textBox .tit.motion .tit2 {animation-name: textAni ; animation-duration: 0.9s }
+.skill .textBox .tit.motion .tit3 {animation-name: textAni ; animation-duration: 1.1s }
+.skill .gauge.motion {animation-name: gauge ; animation-direction:alternate; animation-duration: 0.8s; }
+@keyframes gauge  {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(100%)}
+}
+
+
+
+/* footer */
+footer {width: 100%; background: #dadada; color: #252525; padding: 420px 0 200px; position: relative;}
+/* footer 위 bar maquee 태그 */
+footer .cover {width: 105vw; height: 130px;position: absolute;top: 0;left: -20px;background-color: #fff;border: 1px solid#252525;transform: rotate(-6deg);font-size: 53px;overflow: hidden;padding-top: 7px;}
+footer .cover ul { font-size: 50px; width: 200%;  }
+footer .cover ul li {margin: 30px 60px; position: relative;  float: left;}
+footer .cover ul li:after {content: ''; position: absolute; top: 5px; left: -60px; width: 5px; height: 80%; background: #252525;}
+footer .cover ul li span {font-family: 'NewYork'; font-size: 60px; padding-top: none;}
+footer .cover:nth-child(1) ul li {float: right;}
+footer .cover:nth-child(2) {transform: rotate(6deg);} 
+footer .icon {width: 200px; margin: 0 auto;  position: relative;}
+footer .icon .imgA {position: absolute; top: 180px; right: 170px; width: 90px; height: 90px; }
+footer .icon .imgB {position: absolute; top: 145px; right: 125px; width: 62px; height: 62px; }
+footer .icon img {width: 100%;}
+footer .inner {width: 1200px; margin: 0 auto ; padding-top: 250px; overflow: hidden; }
+footer .inner .left {float:left; width: 45%;  line-height: 0.8; }
+footer .inner .left .tit1 {font-size: 162px; letter-spacing: -8px; }
+footer .inner .left .tit2 {font-size: 119px; font-weight: 300; padding-left: 160px; letter-spacing: -8px; margin-bottom: 30px;}
+footer .inner .left .subtext {font-size: 14px; font-weight: 300; text-align: right; line-height: 1.3; }
+footer .inner .right {float:right; width: 30%; overflow: hidden; }
+footer .inner .right .txt {margin:30px 0; font-size: 30px; font-weight: 400; }
+footer .inner .right .txt span {display: block; opacity: 0.6; font-size: 25px; font-weight: 300; }
+footer .inner .right .address {font-family: 'Noto Sans KR',sans-serif;  font-weight: 500; font-size: 30px;}
+footer .inner .right .address span {display: block; font-family: 'HelveticaNowText'; opacity: 0.6; font-size: 25px; font-weight: 300; }
+
+/* footer animation */
+footer.motion .inner .left .tit1 {animation-name: right; animation-duration: 0.7s;}
+footer.motion .inner .left .tit2 {animation-name: right; animation-duration: 0.9s;}
+footer.motion .inner .left .subtext {animation-name: right; animation-duration: 1.1s;}
+footer.motion .inner .right .txt {animation-name: left; animation-duration: 0.7s;}
+footer.motion .inner .right .txt:nth-child(2) {animation-name: left; animation-duration: 0.9s;}
+footer.motion .inner .right .address {animation-name: left; animation-duration: 1.1s;}
+
+
+/* 반응형 제작 */
+/* ~1750 기준1669px */
+@media screen and (max-width:1750px) {
+    .visual .img.a {top:-34%; left:50%;}
+    .interesting .inner {width: 1350px;}
+    .interesting ul.slide li {width: 400px; height: 682px; padding: 85px 0 162px; margin-right: 0.25%; }
+    }
+
+
+/* ~1600   기준점 1592 */
+@media screen and (max-width:1600px) {
+    /* menuOpen innerheader */
+    .menuOpen .menuWrap .tit {width: 90%;}
+    .visual .inner {width: 95%; padding: 315px 0 150px;}
+    .visual .inner .textBox {padding-left: 3%;}
+    .visual .inner .textBox .tit1 {font-size: 155px; }
+    .visual .inner .textBox .tit2 {font-size: 125px; }
+    .visual .inner .textBox .tit3 {font-size: 155px; padding-left: 20%;}
+    .visual .inner .textBox .subtext {right: 36%;}
+    .visual .inner .imgBox {top: 235px;}
+    .visual .inner .imgBox .img.a img {width: 90%;}
+    .aboutme .inner {width: 95%;}
+    .aboutme .inner .fix .img {width: 650px; height: 633px; }
+    .aboutme .inner .fix .img::after {right: 10%; background-size: 89%;}
+    .aboutme .inner .fix_right {padding-left: 50px;}
+    .aboutme .inner .fix_right .textBox .tit1 {font-size: 130px;}
+    .aboutme .inner .fix_right .textBox .tit2 {font-size: 100px;}
+    .aboutme .inner .fix_right .tit {font-size: 3vw;}
+    .interesting .inner {width: 95%;}
+    .interesting ul.slide {width: 80%;}
+    .interesting ul.slide li:nth-child(3n) {margin-right: 40px;}
+    .interesting ul.slide li {margin-right: 40px;}
+
+
+    }

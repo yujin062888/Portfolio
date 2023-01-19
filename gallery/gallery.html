@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Work</title>
+    <link rel="stylesheet" href="css/gallery.css">
+    <!-- 클론코딩 스와이퍼 -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- ncs 스와이퍼 추가 -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- 스크롤라 -->
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <script src="../js/scrolla.jquery.min.js"></script>
+    <!-- 클론코딩 스와이퍼 -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollToPlugin.min.js"></script>
+</head>
+<body> 
+    <div class="wrap">
+        <!-- header -->
+        <header>
+            <div class="innerHeader">
+                <h1 class="logo" id="white">
+                    <a href="../index.html">
+                        <p>CHO</p>
+                        <p class="b">YUJIN</p>
+                    </a>
+                </h1> 
+                <ul class="gnb">
+                    <li>
+                        <a href="#ContactMe"> Contact Me </a>
+                    </li>
+                    <li>
+                        <!--menuOpen-->
+                        <div class="menuOpen">
+                            <a href="#" class="open hv" alt="메뉴열기" id="white"><p>ME</p><p class="b">NU</p></a>
+                            <div class="menuWrap">
+                                <a href="#" class="close img"><img src="../img/close.png" alt=""></a>
+                                <ul class="gnb">
+                                    <li><a href="https://open.kakao.com/o/s91CKPXe" target="_blank">Contact Me</a></li>
+                                    <li><a href="#" class="close hv" ><p>BA</p><p class="b">CK</p></a></li>
+                                </ul>
+                                <ul class="tit ny"> 
+                                    <li><a href="../index.html"><span>Home</span></a></li>
+                                    <li><a href="../aboutme.html"><span>About Me</span></a></li>
+                                    <li><a href="gallery.html"><span>Gallery <span class="hv">&</span> Work</span></a></li> 
+                                    <li><a href="../Portfolio/Portfolio.html"><span>Portfolio Process</span></a></li>
+                                </ul> 
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="visual animate" data-animate="motion" id="section01"> 
+            <div class="text">
+                <div class="pa"><P class="tit1 ny">*Gallery</P> </div>
+                <div class="pa"><P class="tit2 hv">& WORK</P></div>
+                <P class="subtext hv">CLONE CORDING  <br>
+                    WEB PAGE DESIGN & WEB BANER DESIGN  <br>
+                    NCS PROCESS </P>
+            </div>
+            <p class="img a"><img src="img/dot83_lg.png" alt=""></p>
+            <p class="img b"><img src="img/dot83_lg.png" alt=""></p>
+            <p class="binbox"></p>
+        </section>
+        <section class="clonecording  animate" data-animate="motion" id="section02">
+            <div class="topBox animate" data-animate="motion">
+                <p class="img"><img src="img/dot106_dg.png" alt=""></p>
+                <div class="txt">
+                    <p class="tit1 hv">WEB PUBLISHING</p> 
+                    <p class="tit2 ny">Clone Cording</p>
+                    <p class="sub">다양한 사이트의 디자인과 모션을 똑같이 구현해내는 과정을 통해 <br>
+                        웹퍼블리싱의 이해력을 높이고, 실력향상을 위해 노력했습니다.
+                    </p> 
+                </div>
+            </div> 
+            <div class="swiper mySwiper animate" data-animate="motion" >
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="../clonecording_1/clonecording_1.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_1.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Buyeo Ahaeng</span>
+                                <span class="text hv">Cultural Heritage Event</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_2/clonecording_2.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_2.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Concierge</span>
+                                <span class="text hv">Office & Life service</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_3/clonecording_3.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_3.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Ystudio</span>
+                                <span class="text hv">Web UI/UX Design</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_4/clonecording_4.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_4.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Musign</span>
+                                <span class="text hv">Total Marketing Agency</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_5/clonecording_5.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_5.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Phomein</span>
+                                <span class="text hv">Vietnamese Restaurant</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_6/clonecording_6.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_6.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Deabang</span>
+                                <span class="text hv">Construction Technology</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_7/clonecording_7.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_7.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Yogocham</span>
+                                <span class="text hv">diet lunchbox brand</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_8/clonecording_8.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_9.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Crew a La Mode</span>
+                                <span class="text hv">Apparel & Lifestyle Agency</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="../clonecording_9/clonecording_9.html" target="_blank">
+                            <div class="imgBox">
+                                <img src="img/img_8.png" alt="">
+                            </div>
+                            <div class="textBox">
+                                <span class="title ny">Hanwha</span>
+                                <span class="text hv">Construction Technology</span>
+                            </div>
+                            <span class="plus"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="webbanner animate" data-animate="motion" id="section03">
+            <div class="topBox animate" data-animate="motion">
+                <p class="img"><img src="img/dot90_dg.png" alt=""></p>
+                <p class="sub hv">WEB DESIGN</p>
+                <p class="tit ny">Web Banner</p>
+                <p class="text">여성패션의류회사에서 웹에디터로 근무하며 <br>
+                    작업했던 제품 웹 배너 디자인 결과물입니다.</p>
+            </div>
+        <p class="banner animate" data-animate="motion"><img src="img/banner_02.png" alt=""></p>
+        <p class="text  animate" data-animate="motion">의류의 맞는 특징을 파악하고, 각각의 포인트 되는 부분을  중점으로 <br>
+            찍을 사진의 컨셉을 잡고  사진을 중심으로   컨셉과 맞는 문구와 폰트로 <br>
+            각각의 상품에 맞는 배너를 디자인했습니다.</p>
+        </section>
+        <section class="webpage  animate" data-animate="motion" id="section04">
+            <div class="topBox animate" data-animate="motion">
+                <p class="img"><img src="img/dot106_dg.png" alt=""></p>
+                <div class="txt">
+                    <p class="tit1 hv">WEB DESIGN</p> 
+                    <p class="tit2 ny">Web Page</p>
+                    <p class="sub">여성패션의류회사에서 웹에디터로 근무하며 <br>
+                        작업했던 제품 웹 상세페이지 디자인 결과물입니다.
+                    </p> 
+                </div>
+            </div> 
+            <div class="bottomBox animate" data-animate="motion">
+                <!-- 랩탑이미지목업 -->
+                <p class="laptop"><img src="img/laptop1200.png" alt=""></p>
+                <!-- 랩탑 슬라이더 -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- slider1 -->
+                        <div class="swiper-slide">
+                            <a href="../webpage/webpage.html" target="_blank"><img src="img/laptop_img_01.png" alt=""></a>
+                        </div>
+                        <!-- slider2 -->
+                        <div class="swiper-slide">
+                            <a href="../webpage/webpage.html" target="_blank"><img src="img/laptop_img_02.png" alt=""></a>
+                        </div>
+                        <!-- slider3 -->
+                        <div class="swiper-slide">
+                            <a href="../webpage/webpage.html" target="_blank"><img src="img/laptop_img_03.png" alt=""></a>
+                        </div>
+                        <!-- slider4 -->
+                        <div class="swiper-slide">
+                            <a href="../webpage/webpage.html" target="_blank"><img src="img/laptop_img_04.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ncs animate" data-animate="motion" id="section05">
+            <p class="img"><img src="img/ncs.png" alt=""></p>
+            <div class="inner">
+                <div class="txtBox animate" data-animate="motion">
+                    <div class="left">
+                        <p class="tit1 ny">NCS Process</p>
+                        <p class="tit2 hv">UIUX MOBILE WEB & APP FRONTEND</p>
+                    </div>
+                    <div class="right">
+                        <p class="sub">
+                            국가직무능력표준(NCS National Competency Standards)은 <br>
+                            산업현장에서 직무를 수행하기 위해 요구되는 지식, 기술, 태도 등을 <br>
+                            국가적 차원에서 표준화한 것입니다. 
+                        </p>
+                        <p class="sub">
+                            교육명 : <span>모바일 웹 UI/UX  디자인 & 프론트엔드</span> <br>
+                            교육이수 기간 : <span>2022년 8월 10일 ~ 2023년 1월 20일 (5개월과정)</span> <br>
+                            교육기관 : <span>이젠아카데미평생교육원</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper mySwiper animate" data-animate="motion">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs01.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_01.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs02.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_02.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs03.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_03.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs04.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_04.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs05.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_05.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs06.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_06.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs07.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_07.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('../ncs/ncs08.pdf', '_blank','width=1000 height=1080')"><img src="../img/ncs_08.png" alt=""></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" onclick="window.open('https://yujin062888.github.io/react-todo-app/', '_blank','width=580 height=800')"><img src="../img/ncs_09.png" alt=""></a>
+                        </div> 
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <footer class="animate" data-animate="motion">
+            <div class="cover">
+                <ul class="first-parallel hv">
+                    <li>UI&UX DESIGER</li>
+                    <li><span> Web Publisher</span></li>
+                    <li>WEB DESIGER</li>
+                    <li><span> Web Coder</span></li>
+                    <li>WEB EDITOR</li>
+                    <li><span> Mobile Web editor</span></li>
+                    <li>UI&UX DESIGER</li>
+                    <li><span> Web Publisher</span></li>
+                </ul>
+            </div>
+            <div class="cover" >
+                <ul class="second-parallel hv">
+                    <li>UI&UX DESIGER</li>
+                    <li><span> Web Publisher</span></li>
+                    <li>WEB DESIGER</li>
+                    <li><span> Web Coder</span></li>
+                    <li>WEB EDITOR</li>
+                    <li><span> Mobile Web editor</span></li>
+                    <li>UI&UX DESIGER</li>
+                    <li><span> Web Publisher</span></li>
+                </ul>
+            </div>
+            <a href="https://open.kakao.com/o/s91CKPXe" target="_blank" class="btn hv animate" data-animate="motion" id="ContactMe">Contact Me</a>
+            <div class="icon">
+                <p class="imgA"><img src="img/dot90_dg.png" alt=""></p>
+                <p class="imgB"><img src="img/contact_mark_b.png" alt=""></p>
+            </div>
+            <div class="inner">
+                <div class="left animate" data-animate="motion">
+                    <div class="tit1 ny">Get in</div> 
+                    <div class="tit2 hv">TOUCH</div>
+                    <div class="subtext hv">HELLO, I AM <br>CREATIVE DEVELOPER<br> CHO YU JIN</div>
+                </div>
+                <div class="right animate" data-animate="motion">
+                    <p class="txt hv"><span>Email.</span>vanesa06@naver.com</p>
+                    <p class="txt hv"><span>Phone.</span>010-3804-7679</p>
+                    <p class="address"><span>Address.</span>서울특별시 동대문구 휘경동</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<script>
+
+//1. clonecording
+
+// 1_01.textBox에 active 클래스 붙이기
+let textBox = gsap.utils.toArray('.textBox')
+textBox.forEach((textBox, i ) => { //함수선언과 같음
+    ScrollTrigger.create({
+        trigger:textBox,
+        start:'top bottom',
+        toggleClass:{targets:textBox, className:'active'},
+        // markers:true,
+        once:true
+    });
+});  
+
+// 1_02.swiper 호출
+var swiper = new Swiper(".clonecording .mySwiper", {
+    slidesPerView:4,
+    spaceBetween: 50,
+    centeredSlides:true,
+    autoplay: true, //자동재생
+    autoplaySpeed: 3000, //재생시간
+    
+    pagination: {
+        el: ".swiper-pagination",
+        type:"fraction",
+        formatFractionCurrent: function(number) {return ('0' + number).slice(-2);},//01~02=> 등의 두자리수를 원할 때
+        formatFractionTotal: function(number) {return ('0' + number).slice(-2)}//한자리수를 원할경우 적지않습니다.
+    }
+});
+
+
+// 2. webpage_laptop swiper 호출
+var swiper = new Swiper(".swiper-container", {
+    slidesPerView:1,
+    spaceBetween: 0,
+    centeredSlides:true,
+    autoplay: true, //자동재생
+    direction: "vertical",
+    watchSlidesProgress: true,
+    loop: true,
+    pauseOnHover:true, //마우스 오버시 슬라이드 멈춤
+    pauseOnFocus:true, 
+    autoplaySpeed: 2500, //재생시간
+});
+
+
+// 3. ncs swiper 
+var swiper = new Swiper(".ncs .mySwiper", {
+    slidesPerView: 2, //보여지는 갯수
+    spaceBetween: 150, //각 간격
+    centeredSlides: true, //센터모드
+    autoplay: true, //자동재생
+    loop: true, //루프
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    responsive: [
+                {
+                breakpoint: 1000, //1220px
+                        settings: {
+                            spaceBetween: 50, 
+                        }
+                },
+            ],
+});
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

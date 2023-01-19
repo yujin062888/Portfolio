@@ -1,0 +1,229 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Noto+Sans+KR&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* Layout */
+.gnbMo {display: none;}
+.en {font-family: 'Exo 2', sans-serif;}
+body {font-family: 'Noto Sans KR', sans-serif; font-size: 14px;}
+.wrap {width: 100%; overflow: hidden;}
+header {width: 100%; height: 100px; line-height: 100px; background: rgba(2,2,2,0.19); position: fixed; z-index: 100;}
+.innerHeader {width: 1600px; margin: 0 auto; overflow: hidden;}
+.innerHeader .logo {float: left;}
+.innerHeader .logo a {display: block; width: 100%; height: 100%;}
+.innerHeader .logo a img {width: 100%;}
+
+.innerHeader .gnb {float: left; margin-left: 80px;}
+.innerHeader .gnb li {float: left; margin-right:80px ; }
+.innerHeader .gnb li a {display: block; width: 100%; height: 100%; font-size: 16px; color: #fff; transition: all 0.2s; }
+.innerHeader .gnb li a:hover, .innerHeader .gnb li a:focus {color: #ff8342; transition: all 0,5s;}
+
+.innerHeader .tnb {float: right; }
+.innerHeader .tnb li {float:left; margin-right: 25px;}
+.innerHeader .tnb li a {display: block; width: 100%; height: 100%; text-align: center; color: #fff;}
+.innerHeader .tnb li:nth-child(1) a i, .innerHeader .tnb li:nth-child(2) a i  {font-size: 20px; margin-right: 8px;}
+.innerHeader .tnb li:nth-child(3) a {width: 105px; line-height: 2; border: 1px solid#fff; border-radius: 40px; margin-top: 35px;}
+.innerHeader .tnb li:nth-child(3) a i { margin-left: 10px;}
+
+
+/* section.visual */
+.visual {width: 100%; height: 100vh; background: url(../img/vis_4.jpg) no-repeat center/cover; background-attachment:fixed ;}
+.visual .mainTitle {width: 1000px; margin: 0 auto; color: #fff; padding: 300px 0; text-align: center;}
+.visual .mainTitle h2 {font-size: 55px; margin-bottom: 20px; line-height: 1.2;}
+.visual .mainTitle p {font-size: 25px; margin-bottom: 30px;}
+.visual .mainTitle .view {font-size: 15px; display: block; width: 180px; border: 1px solid#fff; padding: 8px 0; border-radius: 40px; margin: 0 auto;}
+
+/* animation */
+@keyframes slide-up {
+    0% {opacity: 0; }
+    30% {opacity: 0; transform: translateY(50px);}
+}
+@keyframes slide-up2 {
+    0% {opacity: 0; }
+    30% {opacity: 0; transform: translateY(50px) translateX(-50%);}
+} 
+/* innovotion 이너박스는 위치 조정때문에 오른쪽에서 왼쪽으로 나옴을 애니메니션에도 위치 조정을 해주었음! */
+
+.visual .mainTitle.motion h2 {animation-name: slide-up; animation-duration: 0.8s;}
+.visual .mainTitle.motion p {animation-name: slide-up; animation-duration: 1.2s;}
+.visual .mainTitle.motion .view {animation-name: slide-up; animation-duration: 1.2s;}
+
+/* 공통요소 */
+.inner {width: 1400px; margin: 0 auto;}
+.title {color: #000; text-align: center;}
+.title h2 {font-size: 42px; margin-bottom: 5px; font-weight: normal;}
+.title h2 span {color: #ff8342;}
+.title p {font-size: 18px; color: #555;}
+
+/* section about */
+.about {width: 100%; padding: 80px 0;}
+.about .inner ul {width: 100%; overflow: hidden; margin: 30px 0; }
+.about .inner ul li {float:  left; width: 33.3333%;}
+.about .inner ul li a {display: block; width: 100%; height: 100%;}
+.about .inner ul li a p.img {width: 100%; overflow: hidden;}
+.about .inner ul li a p.img img {width: 100%; transition: all 0.3s;}
+/* hover */
+.about .inner ul li a:hover p.img img,.about .inner ul li a:focus p.img img {transform: scale(1.3);}
+
+.about .inner ul li a .text {width: 100%; padding: 30px; box-sizing: border-box; }
+.about .inner ul li a .text h3 {font-size: 20px; margin-bottom: 10px;}
+.about .inner ul li a .text p {font-size: 16px;  margin-bottom: 10px;}
+.about .inner ul li a .text p.more {text-transform: uppercase; padding-left: 40px; font-weight: blod; position: relative;}
+.about .inner ul li a .text p.more::before {content: '\f178'; position: absolute; top: 0; left: 0; font-family: fontAwesome; width: 30px; 
+height: 30px; background: #ff8342; border-radius: 50%; line-height: 30px;}
+
+/* animation */
+.about .title.motion h2 {animation-name: slide-up; animation-duration: 0.8s;}
+.about .title.motion p {animation-name: slide-up; animation-duration: 1.2s;}
+
+.about .inner ul li.motion:nth-child(1) {animation-name: slide-up; animation-duration: 0.8s;}
+.about .inner ul li.motion:nth-child(2) {animation-name: slide-up; animation-duration: 1.2s;}
+.about .inner ul li.motion:nth-child(3) {animation-name: slide-up; animation-duration: 1.6s;}
+
+/* section innovations */
+.innovations {width: 100%; margin-bottom: 150px;}
+.innovations .inner .imgBox {width: 100%; background: url(../img/product_1.jpg)no-repeat center/cover; position: relative; height: 540px;
+margin-top: 32px;}
+.innovations .inner .imgBox .innerBox {width: 80%; position: absolute; left: 50%; transform: translateX(-50%); bottom: -50px;
+background: #3a3c4e; }
+.innovations .inner .imgBox .innerBox h3 {font-size: 18px; background: #fff; padding: 15px 45px; box-sizing: border-box; }
+.innovations .inner .imgBox .innerBox h3 span {color: #ff8342;}
+.innovations .inner .imgBox .innerBox .bottom {width: 100%; color: #fff;  padding: 25px 45px; box-sizing: border-box; overflow: hidden;}
+.innovations .inner .imgBox .innerBox .bottom p {float: left;}
+.innovations .inner .imgBox .innerBox .bottom a {float: right; display: block; background: #ff8342; padding: 7px 30px; border-radius: 50px;}
+.innovations .inner .imgBox .innerBox .bottom a:hover,.innovations .inner .imgBox .innerBox .bottom a:focus {background: #f86020;}
+
+/* animation */
+.innovations .title.motion h2 {animation-name: slide-up; animation-duration: 1.5s;}
+.innovations .title.motion p {animation-name: slide-up; animation-duration: 1.8s;}
+.innovations .inner .imgBox.motion .innerBox  {animation-name: slide-up2; animation-duration: 2s;}
+
+
+/* section me */
+.me {width: 100%; background: url(../img/me.jpg)no-repeat center/cover; padding: 80px 0;}
+.me .list {width: 100%; border-top: 2px solid#000; border-bottom: 2px solid#000; margin: 50px 0;}
+.me .list > li {padding: 30px 60px; box-sizing: border-box;}
+.me .list > li:nth-child(1) {border-bottom: 1px solid#ddd;}
+.me .list > li h3 {font-size: 18px; margin-bottom: 20px;}
+.me .list > li span {color: #ff8342; margin-right: 15px;}
+.me .list > li > p {padding-left: 33px; line-height: 1.6; margin-bottom: 20px;}
+.me .list > li a {display: inline-block; font-weight: bold; margin-left: 3px; font-size: 14px;}
+.me .list > li a span {margin-left: 10px; color: #ff8342;}
+.me .list > li ul.in {margin-bottom: 50px;}
+.me .list > li ul.in li {margin-bottom: 10px; overflow: hidden;}
+.me .list > li ul.in li em {float: left; width: 12%;}
+.me .list > li ul.in li p {float: left; width: 88%; position: relative;}
+.me .list > li ul.in li p::before {content: ''; width: 4px; height: 4px; border-radius: 50%; position: absolute; background: #ff8342;
+left: -40px; top: 10px;}
+.me button {background: red; display: block; border: none; padding: 10px; text-align: center; border-radius: 50px; color: #fff;
+background: #ff8342; margin: auto; width: 280px;}
+
+/* animation */
+.me .title.motion h2 {animation-name: slide-up; animation-duration: 1.5s;}
+.me .title.motion p {animation-name: slide-up; animation-duration: 1.8s;}
+.me .list.motion h3 {animation-name: slide-up; animation-duration: 1.5s;}
+.me .list.motion p {animation-name: slide-up; animation-duration: 1.8s;}
+.me .list.motion ul {animation-name: slide-up; animation-duration: 2.0s;}
+.me .list.motion .more {animation-name: slide-up; animation-duration: 2.4s;}
+
+/* section sns */
+.sns {width: 100%; padding: 150px 0;}
+.sns ul {margin-top: 50px; overflow: hidden;}
+.sns ul li {float: left; width: 32.666%; margin-right: 1%; }
+.sns ul li:nth-child(3) {margin-right: 0;}
+.sns ul li a {display: block; width: 100%; height: 100%;}
+.sns ul li a p.img {width: 100%; position: relative;}
+.sns ul li a p.img img {width: 100%;}
+
+/* hover */
+.sns ul li a p.img:before {content: ''; width: 0%; height: 100%; background: rgba(255,131,66,0.9); transition: all 0.5s;
+position: absolute; top: 0; left: 0;}
+.sns ul li a p.img:after {content: 'BLOG'; transition: all 0.5s; position: absolute; top: 50%; left: 50%; 
+transform: translate(-50%,-50%); font-size: 15PX; color: #fff; padding: 5px 30px; border-radius: 40px; border: 1px solid#fff; 
+opacity: 0; }
+.sns ul li a:hover p.img::before,.sns ul li a:focus p.img::before {width: 100%; }
+.sns ul li a:hover p.img::after,.sns ul li a:focus p.img::after {opacity: 1; }
+
+.sns ul li a .bottom {width: 100%; background: white; padding: 20px 0 20px 30px; box-sizing: border-box;}
+.sns ul li a .bottom p {font-size: 18px; font-weight: bold;}
+.sns ul li a .bottom p.color {color: #ff8342; font-size: 15px; font-weight: normal;}
+.sns ul li a .bottom p.time {color:#999; font-size: 15px; font-weight: normal; padding-left: 20px; margin-top: 30px; position: relative;}
+.sns ul li a .bottom p.time::before {content: '\f017'; position: absolute; left: 0px; top: 5px; font-family: FontAwesome; font-size: 15px; }
+
+/* animation */
+.sns .title.motion h2 {animation-name: slide-up; animation-duration: 1.4s;}
+.sns .title.motion p {animation-name: slide-up; animation-duration: 1.8s;}
+.sns ul li.motion p.img {animation-name: slide-up; animation-duration: 1.2s;}
+.sns ul li.motion p.color {animation-name: slide-up; animation-duration: 1.5s;}
+.sns ul li.motion p {animation-name: slide-up; animation-duration: 1.7s;}
+.sns ul li.motion p.time {animation-name: slide-up; animation-duration: 2.0s;}
+
+/* footer */
+footer {width: 100%; border-top: 1px solid#999; padding: 30px 0 50px; }
+footer .inner {width: 1600px; margin: a auto; overflow: hidden;}
+footer .inner .ftLogo {float: left;}
+footer .inner .address {float: left; margin-left: 100px; margin-top: 10px;}
+footer .inner .address li:nth-child(1) {font-weight: bold; margin-bottom: 10px; }
+footer .inner .address li:last-child {color: #999;}
+footer .inner .list {float: right;}
+footer .inner .list li {float: left; margin-left: 89px;}
+footer .inner .list li a {display: block; width: 100%; height: 100%; position: relative;}
+footer .inner .list li a::after {position: absolute; content: ''; width: 4px; height: 4px; border-radius: 50%; background: #ccc;
+right: -50px; top: 10px;}
+
+footer .inner .list li a:hover,  footer .inner .list li a:focus {color: #ff8342; transition: all 0.3s; text-decoration: underline;} 
+
+
+
+/* responsive Web */
+/* 1599px~1025px */
+@media screen and (max-width:1599px){
+    .innerHeader {width: 95%; min-width: 1024px;}
+    .innerHeader .gnb {margin-left: 50px; }
+    .innerHeader .gnb li {margin-right: 40px; }
+    .innerHeader .gnb li:last-child {margin-right: 0; }
+    .innerHeader .tnb li {margin-right: 10px;}
+    .inner {width: 95%;}
+    .me .list > li ul.in  {padding-left: 32px;}
+    .me .list > li a {padding-left: 32px;}
+    footer .inner {width: 95%; min-width: 90%;}
+    footer .list {display: none;}
+}
+
+/* 769px~1024px */
+@media screen and (max-width:1024px){
+    .innerHeader {width: 95%; min-width: 90%;}
+    .innerHeader .gnb, .innerHeader .tnb {display: none;}
+    .innerHeader .gnbMo {display: block; float: right; color: #fff; font-size: 40px;}
+    .visual .mainTitle {width: 80%;}
+    .me .list > li ul.in li p::before {left: -11px;}
+}
+
+/* 415px~768px */
+@media screen and (max-width:768px){
+    .visual .mainTitle h2 {font-size: 48px;}
+    .visual .mainTitle p {font-size: 23px;}
+    .about {padding: 50px 0;}
+    .about .inner ul {margin: 30px 0 0px;}
+    .about .inner ul li {float: none; width: 100%;}
+    .me .list > li ul.in li em {width: 25%;}
+    .me .list > li ul.in li p {width: 75%;}
+    .me .list > li ul.in li p::before {left: -17px;}
+    .sns {padding: 80px 0;}
+    .sns ul li {float: none; width: 100%; margin-right: 0;}
+    footer .inner {text-align: center;}
+    footer .inner .ftLogo {float: none;}
+    footer .inner .address {float: none; margin-left: 0;}
+}

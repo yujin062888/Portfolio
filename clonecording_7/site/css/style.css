@@ -1,0 +1,533 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+
+/* reset */
+* {margin: 0;padding: 0; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+body {font-family: 'Noto Sans KR', sans-serif; font-size:16px;}
+.en .number {font-family: 'Montserrat',sans-serif;}
+
+/* Layout */
+.wrap {width: 100%;}
+a {cursor: pointer;}
+
+/* header */
+header {width: 100%; position: fixed; z-index: 200; height: 140px; line-height: 140px; background: #fff;}
+.innerHeader {width: 90%; margin: 0 auto; overflow: hidden;   position: relative;}
+.innerHeader .logo {background: #fa4238; float: left; }
+.innerHeader .logo a {display: block; width: 220px; height: 100%;}
+.innerHeader .logo a .img {width: 100%; vertical-align:top;} 
+.innerHeader .gnb {width: 44%; position: absolute; top: 0; left: 50%; transform: translateX(-50%); display: flex;  text-align: center; font-weight: 500; font-size: 22px;}
+.innerHeader .gnb li {width: 25%; }
+.innerHeader .gnb li a { display: block; width: 100%; height: 100%;   }
+.innerHeader .tnb {float: right; display: flex;}
+.innerHeader .tnb li {margin-left: 40px;}
+.innerHeader .tnb li a {display: block; width: 100%; height: 100%;}
+.innerHeader .tnb li a img {width: 100%;}
+
+/* header hover */
+.innerHeader .gnb li a:hover,.innerHeader .gnb li a:focus { color: #fa4238; transition: all .2s linear;}
+.innerHeader .tnb li a:hover img , .innerHeader .tnb li a:focus img { filter: invert(42%) sepia(51%) saturate(5534%) hue-rotate(340deg) brightness(100%) contrast(97%); transition: all .2s linear;}
+
+
+/* Visual */
+.visual {width: 100%; padding-top: 135px; margin-bottom: 200px;}
+.visual .inner {width: 90%; margin: 0 auto; overflow: hidden; }
+.visual .inner ul {position: relative;}
+.visual .inner ul li .img {float: right;  width: 68%;}
+.visual .inner ul li .img img {width: 100%;}
+.visual .inner ul li .txtBox {position: absolute; width: 60%; top: 50%; left: 0; transform: translateY(-50%);}
+.visual .inner ul li .txtBox h2 {font-size: 60px; line-height: 1.2; margin-bottom: 30px; letter-spacing: -3px;}
+.visual .inner ul li:nth-child(1) .txtBox h2 {font-size: 75px;} 
+.visual .inner ul li .txtBox img {height: 58px; margin-left: 15px; display: inline-block;}
+.visual .inner ul li .txtBox h2 span {display: block; font-size: 25px; font-weight: 400 bold; margin-bottom: 25px; letter-spacing: -1px; color: #222;}
+.visual .inner ul li .txtBox .txt {font-size: 21px; font-weight: 300; line-height: 1.7; letter-spacing: -1px;  margin-bottom: 30px; color: #444;}
+.visual .inner ul li .txtBox .txt span {display: block; font-size: 1rem;}
+.visual .inner ul li .txtBox a {display: inline-block; width: 200px; height: 60px; padding-top: 16px;  box-sizing: border-box; text-align: center; border-radius: 40px; background: #8bc5c5; color: #fff; font-weight: bold; font-size: 17px; transition: all 0.3s ease-in-out;}
+
+.visual .inner ul li:nth-child(2) .txtBox a {background: #efbae0;}
+.visual .inner ul li:nth-child(3) .txtBox a {background: #8ec8f0;}
+.visual .inner ul li:nth-child(4) .txtBox a {background: #fcbc77;}
+
+/* Visual slide arrow 공통 */
+.slick-arrow {position: absolute; content: '';  top: 17.2%; right: 0; width: 70px; height: 70px;  z-index: 20; line-height: 70px; background: rgba(0,0,0,0.15); border: none; text-indent: -9999px; cursor: pointer; transition: all 0.2s ease-in-out;}
+.slick-arrow::after {position: absolute; content: '>'; font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: 30px; color: #fff; top: 0; left: 0; width: 70px; height: 70px; text-indent: 0px;}
+.slick-arrow.slick-prev {right: 70px; background: rgba(0,0,0,0.1);} 
+.slick-arrow.slick-prev::after { content: '<'; } 
+
+/* visual hover */
+.slick-arrow:hover {background: rgba(0,0,0,0.2); transition: all 0.3s ease-in-out;}
+.visual .inner ul li .txtBox a:hover,.visual .inner ul li .txtBox a:focus {color: #8bc5c5; background: none; border: 1px solid#8bc5c5; transition: all 0.3s ease-in-out;}
+.visual .inner ul li:nth-child(2) .txtBox a:hover,.visual .inner ul li:nth-child(2) .txtBox a:focus {color: #efbae0; background: none; border: 1px solid#efbae0; transition: all 0.3s ease-in-out;}
+.visual .inner ul li:nth-child(3) .txtBox a:hover,.visual .inner ul li:nth-child(3) .txtBox a:focus {color: #8ec8f0; background: none; border: 1px solid#8ec8f0; transition: all 0.3s ease-in-out;}
+.visual .inner ul li:nth-child(4) .txtBox a:hover,.visual .inner ul li:nth-child(4) .txtBox a:focus {color: #fcbc77; background: none; border: 1px solid#fcbc77; transition: all 0.3s ease-in-out;}
+
+
+/* product */
+.product {width: 90%; margin: 0 auto; text-align: center; margin-bottom: 170px; }
+.product .txtBox {width: 100%;}
+.product .txtBox h1 {font-size: 43px; letter-spacing: -2px; margin-bottom: 20px;}
+.product .txtBox .txt {font-size: 20px; font-weight: 300; line-height: 1.7; letter-spacing: -1px;   color: #555; }
+.product .txtBox .btn {width: 100%;  margin: 40px 0 45px;   }
+.product .txtBox .btn li {display: inline-block; margin : 2.5px;  font-size: 16px;  font-weight: 300; line-height: 53px;  background: #f5f5f5; width: 165px; height: 53px; border-radius: 40px; color: #838583;}
+.product .txtBox .btn li a {display: block; width: 100%; height: 100%;}
+.product .txtBox .sub {font-size: 16px; font-weight: 300; color: #999; margin-bottom: 20px; }
+.product .productBox {width: 100%; }
+.product .productBox ul {overflow: hidden;  clear: both;}
+.product .productBox ul li {float: left; width: calc((100% - 80px)/3);  margin: 0 40px 20px 0; }
+.product .productBox ul li:nth-child(3n) {margin-right: 0;}
+.product .productBox ul li a {display: block; width: 100%; height: 100%; padding-bottom: 10px; box-sizing: border-box; position: relative;}
+.product .productBox ul li a::before {position: absolute;  bottom: 40%; right: 50%; transform: translate(50%,-50%); content: url(../img/plus.png); width: 70px; height: 70px; background: #8bc5c5; border-radius: 50%; opacity: 0; z-index: 100; transition: all .7s cubic-bezier(0.075, 0.82, 0.165, 1);}
+.product .productBox ul li a::after {position: absolute; content: ''; top: 0; left: 0; width: 100%; height: 100%; background:rgba(0, 0, 0, 0.342); opacity: 0; transition: all .7s cubic-bezier(0.075, 0.82, 0.165, 1);}
+.product .productBox ul li a .img {width: 100%; overflow: hidden; margin-bottom: 20px;}
+.product .productBox ul li a .img img {width: 100%;}
+.product .productBox ul li a .tit {font-size: 22px; font-family: 'Montserrat', sans-serif; font-weight:600; letter-spacing: -0.5pt; margin-bottom: 5px;}
+.product .productBox ul li a .sub {font-size: 17px;  font-weight: 300; color: #888;}
+
+
+/* product hover */
+.product .txtBox .btn li:hover,.product .txtBox .btn li:focus {box-shadow: 0 5px 10px rgba(0,0,0,0.1) ; background: #8bc5c5;  color: #fff; font-weight: 400; transition: all .3s linear;}
+.product .productBox ul li a:hover::before ,.product .productBox ul li a:focus::before {opacity: 1; transition: all .7s;}
+.product .productBox ul li a:hover::after ,.product .productBox ul li a:focus::after {opacity: 1; transition: all .7s;}
+
+/* animation 기본 */
+@keyframes slide-up {
+    0% {opacity: 0; transform: translateY(50px);}
+    30% {opacity: 0; transform: translateY(50px);}
+}
+
+/* product animation */
+.product .txtBox .btn.motion {animation-name: slide-up ; animation-duration: all .2s ease;}
+.product .txtBox .sub.motion {animation-name: slide-up ; animation-duration: all .2s ease; animation-delay: .1s;}
+.product .productBox ul.motion  {animation-name: slide-up ; animation-duration: all .3s ease-in-out; animation-delay: .3s;}
+
+
+/* distinction */
+.distinction {width: 90%; margin: 0 auto; padding: 0 0 170px; box-sizing: border-box; background: url(../img/distinction_bg.png)no-repeat left 10% bottom/974px auto ;  position: relative;}
+.distinction .inner {width: 100%; display: flex;}
+.distinction .inner .txtBox {position: absolute; top: 160px; left: 0; width: 50%; margin-bottom: 200px; }
+.distinction .inner .txtBox h1 {font-size: 45px; letter-spacing: -2px; margin-bottom: 15px;}
+.distinction .txtBox::after {position: absolute; top: -67px; left: 0; content: 'DISTINCTION'; font-family: 'Montserrat', sans-serif; letter-spacing: -2pt; font-weight:700; font-size: 110px; color: rgba(0, 0, 0, 0.051);}
+.distinction .inner .txtBox .txt {font-size: 19px; font-weight: 300; line-height: 1.7; letter-spacing: -1px;   color: #555; margin-bottom: 40px;}
+.distinction .inner ul {width: 100%; overflow: hidden; }
+.distinction .inner ul li {width: 50%; }
+.distinction .inner ul li:nth-child(1) {float: right; padding: 0 140px 0 0; box-sizing: border-box;}
+.distinction .inner ul li:nth-child(2) {float: left; padding: 480px 160px 0 0; box-sizing: border-box;}
+.distinction .inner ul li:nth-child(3) {float: right; padding: 150px 0 0 160px; justify-content: flex-end; box-sizing: border-box; }
+.distinction .inner ul li .img {width: 100%; max-width: 100%; margin-bottom: 40px; }
+.distinction .inner ul li .img img {width: 80%; }
+.distinction .inner ul li h3 {margin-bottom: 10px; font-size: 30px; }
+.distinction .inner ul li .txt {font-size: 17px; font-weight: 300; line-height: 2;   color: #666;}
+.distinction .inner ul li .txt strong {color: #000;}
+.distinction .inner ul li .txt span {color: #fa4238;}
+.distinction .inner ul li a {float: right; transform: translate(-177px,-77px); display: block; width: 70px; height: 70px; background: #8bc5c5; border-radius: 50%; transition: all .3s ease;}
+
+
+/* distinction hover */
+.distinction .inner ul li a:hover,.distinction ul li a:focus { transform: translate(-177px,-77px) rotate(180deg); transition: all .3s ease-in-out;}
+
+/* distinction motion */
+.distinction .inner .txtBox.motion  {animation-name: slide-up ; animation-duration: all .4s ease-in-out; }
+.distinction .inner ul li.motion {animation-name: slide-up ; animation-duration: all .4s ease-in-out; animation-delay: .2s}
+
+/* 에러남
+.distinction .ul.motion li:nth-child(1) {animation-name: slide-up ; animation-duration: all .4s ease-in-out; animation-delay: .2s }
+.distinction .ul.motion li:nth-child(2) {animation-name: slide-up ; animation-duration: all .4s ease-in-out; animation-delay: .4s}
+.distinction .ul.motion li:nth-child(3) {animation-name: slide-up ; animation-duration: all .4s ease-in-out; animation-delay: .6s}
+*/
+
+
+
+/* notice */
+.notice {width: 90%; margin: 0 auto ; padding: 170px 0; box-sizing: border-box; background: #abd3d3; text-align: center; position: relative;  z-index: -1;}
+.notice::before {position: absolute; content: ''; width: 50%; height: 100%; top: 0; left: 0; background: #a1cece; z-index: -1;}
+.notice h1 {font-family: 'Montserrat', sans-serif; font-size: 45px; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 60px; z-index: 100;}
+.notice ul {width: 72%;  margin: 0 auto;}
+.notice ul li {width: 390px; padding-right:30px;}
+.notice ul li a {display: block; width: 100%; height: 100%; position: relative; cursor: pointer;}
+.notice ul li a img {width: 100%; }
+.notice ul li a .txtBox {padding: 34px 10px; background: #fff;}
+.notice ul li a .txtBox::before {position: absolute; bottom: 12%; right: 50%; transform: translateX(50%);  content: url(../img/plus.png); width: 70px; height: 70px; background: #8bc5c5; border-radius: 50%; opacity: 0; transition: all 0.5s ease; }
+.notice ul li a .txtBox .tit {font-size: 20px; font-weight: 500; margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #333;}
+.notice ul li a .txtBox .date {font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #888;}
+
+/* notice slide2 arrow */
+.notice .slick-arrow {top: 40%;  right: -19.5%;}
+.notice .slick-arrow.slick-prev { left: -19.5%;}
+.notice .slick-arrow:hover,.notice .slick-arrow:focus {background: #73d0d0;}
+
+/* notice hover */
+.notice ul li a:hover .txtBox::before,.notice ul li a:focus .txtBox::before{opacity: 1; bottom: 26%; transition: all 0.5s ease-in-out; }
+/* notice animation */
+.notice h1.motion {animation-name: slide-up ; animation-duration: all 0.5s ; }
+.notice ul.motion {animation-name: slide-up ; animation-duration: all 0.5s ; animation-delay: 0.2s; }
+
+
+/* bottom */
+.bottom {width: 90%; margin: 0 auto; padding: 170px 0; box-sizing: border-box; overflow: hidden; position: relative;  clear: both; line-height: 175%; }
+.bottom::after {position: absolute; content: 'YOGOCHAM'; line-height: normal; bottom: -5%; left:50%; transform: translateX(-50%); color: rgba(0,0,0,.06); font-family: 'Montserrat', sans-serif; letter-spacing: -2pt; font-weight:700;font-size: 120px; }
+.bottom .left {float: left;  position: relative; margin-right: 40px; width: calc((100% - 80px)/3); }
+.bottom .left a {display: block; width: 100%; height: 100%;  background: url(../img/banner01.jpg)no-repeat right bottom/100% auto; padding: 68px 45px; box-sizing: border-box; transition: all .3s ease;}
+.bottom .left a .tit {font-size: 20px; font-weight: 500; letter-spacing: -0.75pt; margin-bottom: 10px;  color: #fff;}
+.bottom .left a .sub {font-size: 15px; font-weight: 100; color: rgba(255,255,255,0.7);}
+.bottom .left a .sub span {display: inline-block;  margin-top: 20px; display: block;  color: #fff; text-decoration: underline;}
+.bottom .left a img {position: absolute; bottom: 0; right: 20px;}
+.bottom .middle {float: left; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: calc((100% - 80px)/3);  margin-right: 40px;  padding: 30px 45px; box-sizing: border-box;} 
+.bottom .middle .tit {font-size: 20px; font-weight: 500; letter-spacing: -0.75pt; }
+.bottom .middle ul {margin-top: 30px; text-align: center;}
+.bottom .middle ul li {display: inline-block; width: 24%; justify-content: space-between;}
+.bottom .middle ul li a {display: block; width: 100%; height: 100%; }
+.bottom .middle ul li a .img {max-width: 72px;  margin: 0 auto 15px; }
+.bottom .middle ul li a .img img {width: 100%; transition: all .3s ease;}
+.bottom .middle ul li a .txt {text-align: center; font-size: 15px; color: #888; font-weight: 400; transition: all .3s ease;}
+
+.bottom .right {float: right; position: relative; width: calc((100% - 80px)/3); height: 100%; }
+.bottom .right a {display: block; width: 100%; height: 100%; background: url(../img/banner02.jpg)no-repeat right bottom/100% ;  padding: 68px 45px;  box-sizing: border-box; transition: all .3s ease;}
+.bottom .right a .tit {font-size: 20px; font-weight: 500; letter-spacing: -0.75pt; margin-bottom: 10px;  color: #fff;}
+.bottom .right a .sub {font-size: 15px; font-weight: 100; color: rgba(255,255,255,0.7);}
+.bottom .right a .sub span {display: inline-block; margin-top: 20px; display: block;  color: #fff; text-decoration: underline;}
+.bottom .right a img {position: absolute; bottom: 0; right: 20px;}
+
+/* bottom hover */
+.bottom .left a:hover,.bottom .left a:focus { background: url(../img/banner01-2.jpg)no-repeat right bottom/100% ; transition: all .5s ease-in-out;}
+.bottom .right a:hover,.bottom .right a:focus { background: url(../img/banner02-2.jpg)no-repeat right bottom/100% ; transition: all .5s ease-in-out;}
+.bottom .middle ul li a:hover img ,.bottom .middle ul li a:focus img {transform: translateY(15px); transition: all 0.3s ease-in-out ;}
+.bottom .middle ul li a:hover .txt ,.bottom .middle ul li a:focus .txt {color: #555; transition: all 0.3s ease-in-out ;}
+
+@keyframes slide-up3 {
+    0% {opacity: 0; transform: translateY(50px);  transform: translateX(-50%); }
+    30% {opacity: 0; transform: translateY(50px);  transform: translateX(-50%); }
+}
+
+/* bottom animation */
+.bottom .left.motion  {animation-name: slide-up ; animation-duration: all 0.3s ; }
+.bottom .middle.motion {animation-name: slide-up3 ; animation-duration: all 0.3s ; animation-delay: 0.2s; }
+.bottom .right.motion {animation-name: slide-up; animation-duration: all 0.3s ; animation-delay: 0.4s;}
+
+
+/* footer */
+footer {width: 100%; padding: 70px 0; box-sizing: border-box; border-top: 1px solid#ddd;}
+footer .inner {width: 90%; margin: 0 auto;  overflow: hidden;}
+
+footer .inner h1 {float: left; vertical-align: center;}
+footer .inner .adress {float: left;  padding-left: 65px; box-sizing: border-box;}
+footer .inner .adress ul li {display:inline-block; padding: 0 30px 6px 0; box-sizing: border-box; font-size: 15px; font-weight: 300; letter-spacing: -0.4pt; color: #666;}
+footer .inner .adress .copy {font-size: 15px; color: rgba(119,119,119,.5); padding-top: 16px; font-weight: 500; box-sizing: border-box;}
+footer .inner .adress .copy span {color: rgba(119, 119, 119, 0.322);}
+footer .inner .adress .copy a {display: inline-block; transition: all 0.3s ease-in-out;}
+footer .inner .sns {float: right;}
+footer .inner .sns li {display: inline-block; width: 38px; height: 38px; border-radius: 50%;  overflow: hidden; }
+footer .inner .sns li:nth-child(2) {background: #3a589b;}
+footer .inner .sns li:nth-child(3) {background: #32c800;}
+footer .inner .sns li a {display: block; width: 100%; height: 100%;}
+footer .inner .sns li a img {width: 100%; }
+/* footer hover */
+footer .inner .adress .copy a:hover, footer .inner .adress .copy a:focus {color: rgba(138, 138, 138, 0.568); transition: all 0.3s ease-in-out;}
+
+
+
+/* responsive Web */
+/* 1600px ~ 1301px  기준점 1400px */ 
+@media screen and (max-width:1600px){ 
+    header {height: 110px; line-height: 110px;}
+    .innerHeader {padding: 0 5%; }
+    .innerHeader .logo a {height: 110px; width: 180px;}
+    .innerHeader .logo a img {max-width: 100%;}
+    .innerHeader .gnb {top: 5px; max-width: 700px; margin-left: 30px; font-size: 21px;}
+    .innerHeader .tnb {top: 5px; }
+    .visual {padding-top: 110px; margin-bottom: 150px;}
+    .visual .inner ul li .txtBox {width: 45%;}
+    .visual .inner ul li .txtBox h2 {font-size: 50px;}
+    .visual .inner ul li .txtBox h2 span {font-size: 24px; margin-bottom: 18px; font-weight: 400;}
+    .visual .inner ul li:nth-child(1) .txtBox h2 {font-size: 50px;} 
+    .visual .inner ul li .txtBox img {height: 48px; margin-left: 15px;}
+
+    .visual .inner ul li .txtBox a {width: 160px; height: 50px;  margin: 30px auto 0; padding-top: 12px;}
+    .visual .inner ul li .txtBox .txt {font-size: 20px;}
+    .visual .inner ul li .txtBox .txt span { padding-top: 10px;}
+    .visual .inner ul li .img {max-width: 70%;}
+    .slick-arrow {width: 60px; height: 60px;}
+    .slick-arrow::after { font-size: 25px; width: 60px; height: 60px; top: -5px;}
+    .slick-arrow.slick-prev {right: 60px; }
+
+    .distinction {background: url(../img/distinction_bg.png)no-repeat left 8% bottom/750px auto ; }
+    .distinction .inner .mo {display: none;}
+    .distinction .inner .txtBox::after {font-size: 82px; bottom: 20px; top: -40px; }
+    .distinction .inner ul li:nth-child(1) {padding:0 90px 0 0; }
+    .distinction .inner ul li:nth-child(2) {padding: 400px 110px 0 0;  }
+    .distinction .inner ul li:nth-child(3) {padding: 80px 0 0 90px; }
+    .distinction .inner ul li a {transform: translate(-10px,-77px);}
+    .distinction .inner ul li .img img {width: 100%;}
+    .distinction .inner ul li .txt {font-size: 1rem;}
+    /* distinction hover */
+    .distinction .inner ul li a:hover,.distinction ul li a:focus { transform: translate(-10px,-77px) rotate(180deg); transition: all .3s ease-in-out;}
+
+    .notice ul {width: 66%; margin: 0 auto;}
+    .notice .slick-arrow {top: 40%;  right: -25.5%;}
+    .notice .slick-arrow.slick-prev { left: -25.5%;}
+
+    .bottom .left {margin-right: 20px; width: calc((100% - 40px)/3);  }
+    .bottom .left a {padding: 50px 30px;  background: url(../img/banner01.jpg)no-repeat right bottom/120% auto; }
+    .bottom .middle {margin-right: 20px; width: calc((100% - 40px)/3); padding: 10px 20px 0; }
+    .bottom .middle ul {margin-top: 20px;}
+    .bottom .middle ul li a .img img {width: 80%;}
+    .bottom .right {width: calc((100% - 40px)/3);  }
+    .bottom .right a {padding: 50px 30px; background: url(../img/banner02.jpg)no-repeat right bottom/120% auto; }
+    /* hover */
+    .bottom .left a:hover,.bottom .left a:focus { background: url(../img/banner01-2.jpg)no-repeat right bottom/120% ; transition: all .5s ease-in-out;}
+    .bottom .right a:hover,.bottom .right a:focus { background: url(../img/banner02-2.jpg)no-repeat right bottom/120% ; transition: all .5s ease-in-out;}
+
+    footer .inner .adress {padding-left: 30px;}
+}
+
+
+
+/* 1300px ~ 981px  기준점 1100px */ 
+@media screen and (max-width:1300px) { 
+    .innerHeader .gnb {top: 5px;  margin-left: 23px; width: 50%;}
+
+    .visual .inner ul li .txtBox {width: 40%;}
+    .visual .inner ul li .txtBox h2 {font-size: 42px; margin-bottom: 20px;}
+    .visual .inner ul li .txtBox h2 span {font-size: 22px; font-weight: 400; margin-bottom: 15px; }
+    .visual .inner ul li .txtBox a {width: 160px; height: 50px;  margin: 30px auto 0; padding-top: 12px;}
+    .visual .inner ul li .txtBox .txt {font-size: 18px; margin-bottom: 10px;}
+    .visual .inner ul li .txtBox img {margin-left: 12px; height: 44px;}
+    .slick-arrow {width: 50px; height: 50px;   top:90%;}
+    .slick-arrow::after { font-size: 25px; width: 50px; height: 50px; top: -10px;}
+    .slick-arrow.slick-prev {right: 50px; }
+
+    .product {margin-bottom: 150px;}
+    .product .txtBox h1 {font-size: 38px; margin-bottom: 12px;}
+    .product .txtBox .txt {font-size: 18px;}
+    .product .txtBox .btn {margin: 30px 0 40px;}
+    .product .txtBox .btn li {margin: 2px;}
+    .product .productBox ul li {margin: 0 20px 20px 0; width: calc((100% - 40px)/3);}
+
+    .distinction {background: url(../img/distinction_bg.png)no-repeat left 8% bottom/500px auto ; }
+    .distinction .inner {display: flex;}
+    .distinction .inner .txtBox::after {font-size: 60px; bottom: 20px; top: -30px; }
+    .distinction .inner ul li h3 {font-size: 24px;}
+    .distinction .inner ul li:nth-child(2) {padding: 400px 90px 0 0; }
+    .distinction .inner ul li:nth-child(3) {padding: 150px 0 0 100px; }
+
+    .notice { padding: 150px 0; box-sizing: border-box;}
+    .notice h1 {margin-bottom: 40px;}
+    .notice ul {width: 90%;  margin: 0 auto;}
+    .notice ul li {width: 290px; padding-right:20px;}
+    .notice ul li a .txtBox .tit {font-size: 18px; }
+    
+    .notice .slick-arrow {top: 35%;  right: -5.5%;}
+    .notice .slick-arrow.slick-prev {top: 35%;  left: -5.5%;}
+
+    .bottom {padding: 150px 0; }
+    .bottom::after {font-size: 100px; bottom: -30px;}
+    .bottom .tit {font-size: 18px; font-weight: 300;}
+    .bottom .sub {font-size: 14px;}
+    .bottom .left a {padding: 40px 20px;  background: url(../img/banner01.jpg)no-repeat right bottom/140% auto; }
+    .bottom .left a img {max-width: 50%; right: 10px;}
+    .bottom .right a {padding: 40px 20px;  background: url(../img/banner02.jpg)no-repeat right bottom/140% auto; }
+    .bottom .right a img {max-width: 50%; right: 10px;}
+    .bottom .middle {padding: 0px; }
+    .bottom .middle .txt {font-size: 14px; font-weight: 100;}
+    /* hover */
+    .bottom .left a:hover,.bottom .left a:focus { background: url(../img/banner01-2.jpg)no-repeat right bottom/140% ; transition: all .5s ease-in-out;}
+    .bottom .right a:hover,.bottom .right a:focus { background: url(../img/banner02-2.jpg)no-repeat right bottom/140% ; transition: all .5s ease-in-out;}
+
+}
+
+
+/* 701px ~ 980px  기준점 860px */ 
+@media screen and (max-width:980px ) { 
+    header {height: 80px; line-height: 80px; }
+    .innerHeader .logo a {width:131px; height:80px;}
+    .innerHeader .logo a img {width: 100%; vertical-align: top;}
+    .innerHeader .gnb {display: none;}
+    .innerHeader .tnb {vertical-align: top;}
+    .innerHeader .tnb li {margin-left: 30px;}
+    .innerHeader .tnb li a img {width: 95%;}
+
+    .visual {padding-top: 80px; margin-bottom: 120px;}
+    .visual .inner ul li .txtBox {width: 40%;}
+    .visual .inner ul li .img {width: 70%;}
+    .visual .inner ul li .txtBox br {display: none;}
+    .visual .inner ul li .txtBox h2 {font-size: 34px; margin-bottom: 15px;}
+    .visual .inner ul li .txtBox h2 span { font-size: 18px; font-weight: 400; margin-bottom: 12px;}
+    .visual .inner ul li .txtBox .txt {font-size: 15px;}
+    .visual .inner ul li .txtBox .txt span {font-size: 14px;}
+    .visual .inner ul li .txtBox img {margin-left: 8px; height: 38px;}
+    .visual .inner ul li .txtBox a {width: 140px; padding-top: 0px; margin: 21px auto 0; line-height: 38px; height: 40px; font-size: 16px; font-weight: 500;}
+    .slick-arrow {width: 40px; height: 40px;   top:90%;}
+    .slick-arrow::after { font-size: 20px; width: 40px; height: 40px; top: -15px;}
+    .slick-arrow.slick-prev {right: 40px; }
+
+    .product {margin-bottom: 120px;}
+    .product .txtBox h1 {font-size: 30px;}
+    .product .txtBox .txt {font-size: 16px;}
+    .product .txtBox .btn {margin: 20px 0 30px;}
+    .product .txtBox .btn li {width: 140px; height: 44px; line-height: 44px; font-size: 15px;}
+    .product .txtBox .sub {font-size: 15px;}
+    .product .productBox ul li a {overflow: hidden;}
+    .product .productBox ul li a .img {margin-bottom: 10px;}
+    .product .productBox ul li a .tit {font-size: 19px; margin-bottom: 4px;}
+    .product .productBox ul li a .sub {font-size: 15px; color: #000; font-weight: 100 bold; }
+    .product .productBox ul li a::before {content: ''; background-image: url(../img/plus.png); background-size:cover;  width: 50px; height: 50px; opacity: 0;  bottom: 30%;}
+
+    .distinction .inner .txtBox {top: 100px;}
+    .distinction .inner .txtBox h1 {font-size: 30px;  margin-bottom: 10px; }
+    .distinction .inner .txtBox::after {font-size: 45px; }
+    .distinction .inner .txtBox .txt {font-size: 16px; line-height: 1.5;}
+    .distinction .inner ul li .img {margin-bottom: 20px}
+
+    .distinction .inner ul li h3 {font-size: 20px; margin-bottom: 8px;}
+    .distinction .inner ul li .txt {font-size: 14px; letter-spacing: -0.75pt; line-height: 200%;}
+    .distinction .inner ul li:nth-child(1) {padding:0 50px 0 0 ; }
+    .distinction .inner ul li:nth-child(2) {padding: 250px 50px 0 0; }
+    .distinction .inner ul li:nth-child(3) {padding:40px 0 0 50px; }
+    .distinction .inner ul li a {transform: translate(-10px, -50px); width: 50px; height: 50px; overflow: hidden;}
+    .distinction .inner ul li a img {width: 100%; }
+    /* distinction hover */
+    .distinction .inner ul li a:hover,.distinction ul li a:focus { transform: translate(-10px,-50px) rotate(180deg); transition: all .3s ease-in-out;}
+
+    .notice {padding: 120px 0;}
+    .notice ul {width: 80%;}
+    .notice h1 {font-size: 30px; margin-bottom: 30px;}
+    .notice .slick-arrow {top: 35%;  right: -12.3%;}
+    .notice .slick-arrow.slick-prev {top: 35%;  left: -12.3%;}
+
+    .bottom {padding: 120px 0;}
+    .bottom::after {font-size: 80px; bottom: -20px;}
+    .bottom .left { width: 100%; margin: 0 0 60px;}
+    .bottom .left a { padding: 40px 20px 40px 20px; background: url(../img/banner01.jpg)no-repeat right bottom/100% auto; }
+    .bottom .left a .tit {font-size: 16px; margin-bottom: 5px;}
+    .bottom .left a .sub {font-size: 13px;}
+    .bottom .left a .sub span {margin-top: 8px;}
+    .bottom .left a .sub br {display: none;}
+    .bottom .left a img {max-width: 40%; right: 10%;}
+
+    .bottom .middle {width: 100%; margin: 0 0 60px; position: static; transform: translate(0,0);}
+    .bottom .middle .tit {display: none; }
+    .bottom .middle ul {margin: 0;}
+    .bottom .right { width: 100%; margin: 0;}
+    .bottom .right a { padding: 40px 20px 40px 20px; background: url(../img/banner02.jpg)no-repeat right bottom/100% auto; }
+    .bottom .right a .tit {font-size: 16px; margin-bottom: 5px;}
+    .bottom .right a .sub {font-size: 13px;}
+    .bottom .right a .sub span {margin-top: 8px;}
+    .bottom .right a .sub br {display: none;}
+    .bottom .right a img {max-width: 40%; right: 10%;}
+    /* hover */
+    .bottom .left a:hover,.bottom .left a:focus { background: url(../img/banner01-2.jpg)no-repeat right bottom/100% auto; }
+    /* hover */
+    .bottom .right a:hover,.bottom .right a:focus { background: url(../img/banner02-2.jpg)no-repeat right bottom/100% auto; }
+
+    @keyframes slide-up3 {
+        0% {opacity: 0; transform: translateY(0);  transform: translateX(0); }
+        30% {opacity: 0; transform: translateY(0);  transform: translateX(0); }
+    }
+    /* bottom animation */
+    .bottom .middle.motion {animation-name: slide-up3 ; animation-duration: all 0.3s ; animation-delay: 0.2s; }
+
+
+    footer .inner .footerLogo {width: 100%;}
+    footer .inner .footerLogo img { max-width: 90px;}
+    footer .inner {position: relative;}
+    footer .inner .sns {position: absolute; top: 5px; right: 0;}
+    footer .inner .adress {padding-left: 0; padding-top: 20px;}
+    footer .inner .adress ul li {font-size: 14px; font-weight: 400; padding: 0 15px 4px 0;}
+    footer .inner .adress .copy {font-size: 14px; padding-top: 12px;}
+
+}
+
+
+
+/*  ~ 700px  기준점 550px */ 
+@media screen and (max-width:700px ) { 
+    header {height: 56px; line-height: 56px; }
+    .innerHeader .logo a {width:97px; height:56px;}
+    .innerHeader .tnb li {margin-left: 15px;}
+    .innerHeader .tnb li a img {width: 85%;}
+
+    .visual {padding-top: 56px; margin-bottom: 100px;  overflow:hidden}
+    .visual .inner ul li .txtBox {width: 100%; padding: 50px 0 10px; position: relative; transform: translateY(0); top: auto; margin-bottom: 350px;}
+    .visual .inner ul li .txtBox h2 span {font-size: 16px;}
+    .visual .inner ul li .txtBox h2 {font-style: 30px;}
+    .visual .inner ul li:nth-child(1) .txtBox h2 {font-size: 40px;}
+    .visual .inner ul li .txtBox .txt {font-size: 13px;}
+    .visual .inner ul li .txtBox a {width: 120px; margin: 5px auto 0; font-size: 14px;}
+    .visual .inner ul li .img {width: 100%; padding: 160px 0 0 0; position: absolute; top: 10%; bottom: 0; max-width: 100%;}
+    .visual .inner ul li .img img {width: 100%;}
+    .slick-arrow {width: 40px; height: 40px;   top:85%;}
+    .product {margin-bottom:0;}
+    .product .txtBox h1 {font-size: 24px; margin-bottom: 10px;}
+    .product .txtBox .txt {font-size: 14px; }
+    .product .txtBox .btn {margin: 20px 0 30px;}
+    .product .txtBox .btn li {width: 120px; height: 36px; font-size: 12px; line-height: 36px;}
+    .product .txtBox .sub {font-size: 12px;}
+    .product .productBox ul li {width: calc((100% - 20px)/2);}
+    .product .productBox ul li:nth-child(3n) {margin-right: 20px;}
+    .product .productBox ul li:nth-child(2n) {margin-right: 0;}
+    .product .productBox ul li a .tit {font-size: 16px;}
+    .product .productBox ul li a .sub {font-size: 14px;}
+
+    .distinction {background: none; padding: 0 0 100px;}
+    .distinction .inner .txtBox {text-align: center; padding: 0 0 25px; margin-bottom: 0; left: 50%; transform: translate(-50%,0);}
+    .distinction .inner .txtBox::after {font-size: 40px;}
+    .distinction .inner .txtBox h1 {font-size: 24px;}
+    .distinction .inner .txtBox .txt {font-size: 14px;}
+    .distinction .inner ul li {width: 100%;}
+    .distinction .inner ul li:nth-child(1) {padding:250px 0 30px 45px !important; }
+    .distinction .inner ul li:nth-child(2) {padding: 0 45px 30px 0 !important; }
+    .distinction .inner ul li:nth-child(3) {padding:0 0 30px 45px !important; }
+
+
+    @keyframes slide-up4 {
+        0% {opacity: 0; transform: translateY(50px); transform: translateX(-50%);}
+        20% {opacity: 0; transform: translateY(50px); transform: translateX(-50%);}
+    }
+
+    /* distinction motion */
+    .distinction .inner .txtBox.motion  {animation-name: slide-up4 ; animation-duration: all .4s ease-in-out; }
+
+
+
+    .notice {padding: 100px 0;}
+    .notice h1 {font-size: 24px; margin-bottom:20px;}
+    .notice ul {width: 90%;}
+    .notice ul li {width: 390px; padding-left: 30px;}
+    .notice ul li a .txtBox {padding: 18px 5px; }
+    .notice ul li a .txtBox .tit {font-size: 14px; margin-bottom: 8px; }
+
+    .bottom {padding: 100px 0;}
+    .bottom::after {display: none;}
+    .bottom .left a img { max-width: 30%; right: 3%;}
+    .bottom .left a .tit {font-size: 14px;}
+    .bottom .left a .sub {font-size: 13px;}
+    .bottom .left a .sub span {font-weight: 300; color: #fff;}
+    .bottom .left {margin: 0 0 40px;}
+    .bottom .right a img { max-width: 30%; right: 3%;}
+    .bottom .right a .tit {font-size: 14px;}
+    .bottom .right a .sub {font-size: 13px;}
+    .bottom .right a .sub span {font-weight: 300; color: #fff;}
+    .bottom .middle {margin: 0 0 40px;}
+    .bottom .middle ul li a .txt {font-size: 13px;}
+
+
+    footer {padding: 30px 5% 40px; overflow: hidden; text-align: center;}
+    footer .inner  {width: 100%; }
+    footer .inner .footerLogo img {max-width: 80px; }
+    footer .inner .adress ul li {font-size: 13px; padding: 0 10px 4px 0;}
+    footer .inner .adress ul br {display: none;}
+    footer .inner .adress .copy { font-size: 13px; padding-top: 10px;}
+    footer .inner .sns {width: 100%; position: relative; top: auto; right: auto; margin: 13px auto 0; }
+    footer .inner .sns li { width: 26px; height: 26px;   overflow: hidden; }
+    footer .inner .sns li img {object-fit:contain;}
+}

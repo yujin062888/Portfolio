@@ -1,0 +1,368 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+@font-face {
+    font-family: 'PyeongChang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
+    font-weight: 700 ;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PyeongChang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PyeongChangPeace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PyeongChangPeace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+/* reset */
+* {margin: 0;padding: 0; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* Layout */
+body {font-size: 12px; font-family: 'Noto Sans KR', sans-serif;}
+
+/* 전체 배경 */
+.wrap {width: 100%; background-color: #0f171d; background-image: url(../img/all_bg.png); position: relative; overflow: hidden; z-index: 1;}
+
+
+/* header */
+header {width: 100%;  height: 130px;  text-align: center; background: transparent; position: absolute; top: 0 left  0;  z-index: 100;}
+header .innerHeader {width: 95%; margin: 0 auto;  position: relative;}
+header .innerHeader .logo {position: absolute; top: 0; left: 0; max-width: 85px; line-height: 130px;}
+header .innerHeader .logo a {display: inline-block; width: 100%; height: 100%;}
+header .innerHeader .gnb {width: 920px; padding: 0 10px; position: absolute; top: 0; left: 50%; transform: translateX(-50%);  color: rgba(255, 255, 255, 0.932); line-height: 130px;}
+header .innerHeader .gnb li {display: inline-block; max-width: 172px; width: 25%; font-size: 20px;  letter-spacing: -1;}
+header .innerHeader .tnb {position: absolute; top: 45px; right: 0; }
+header .innerHeader .tnb li {display: inline-block; margin-left: 10px; font-size: 15px; letter-spacing: -1;}
+header .innerHeader .tnb li:nth-child(1) {border: 1px solid#fff; border-radius: 30px; font-size: 15px; padding: 5px 10px 5px; box-sizing: border-box; color: #fff; }
+header .innerHeader .tnb li span {vertical-align: middle; font-size: 28px; color: #fff; }
+
+/* header hover */
+header .innerHeader .gnb li a:hover {color: #e34a73; transition: all 0.5s;}
+
+/* visual */
+.wrap .visual {width: 100%; height: 100vh; padding: 0 0 60px; box-sizing: border-box; background: url(../img/main_vs.jpg)no-repeat center/cover ; background-size: 100% cover; position: relative; color: #fff; text-align: center;}
+.wrap .visual::before {position: absolute; top: 0; left: 0; content: url(../img/mv_object.png); opacity: 0.15; }
+.wrap .visual .inner {width: 70%; margin: 0 auto; padding-top: 130px; box-sizing: border-box; position: relative; }
+.wrap .visual .inner .moon {width: 116px; height: 117px; margin: 0 auto;}
+.wrap .visual .inner .moon img {width: 100%; }
+.wrap .visual .inner .mv-txt {width: 186px; height: 237px; margin: 0 auto; top: -10px;}
+.wrap .visual .inner .mv-txt img {width: 100%; }
+.wrap .visual .inner .rightTxt {position: absolute; top: 50%; right: calc(50% - 400px); text-align: left; font-family: 'PyeongChang'; }
+.wrap .visual .inner .rightTxt .sub-tit {font-size: 24px; font-weight: 700;  }
+.wrap .visual .inner .rightTxt .sub-sub {font-size: 18px; margin: 20px 0 80px;  font-weight: 300; }
+.wrap .visual .inner .rightTxt .date {font-size: 18px; margin-bottom: 8px; font-weight: 300;}
+
+
+
+/* visual animation */
+@keyframes slide-up {
+    0% {opacity: 0; transform: translateY(70px);}
+    30% {opacity: 0; transform: translateY(70px);}
+}
+
+@keyframes right {
+    0% {opacity: 0; transform: translateX(70px);}
+    30% {opacity: 0; transform: translateX(70px);}
+}
+
+.wrap .visual .inner .moon.motion {animation-name: slide-up; animation-duration: all 0.2s ease; }
+.wrap .visual .inner .mv-txt.motion  {animation-name: slide-up; animation-duration: all 0.3s ease; animation-delay: 0.2s;}
+
+.wrap .visual .inner .rightTxt .sub-tit.motion {animation-name: right; animation-duration: all 0.5s ease; animation-delay: 0.3s;}
+.wrap .visual .inner .rightTxt .sub-sub.motion {animation-name: right; animation-duration: all 0.5s ease; animation-delay: 0.4s;}
+.wrap .visual .inner .rightTxt .date.motion {animation-name: right; animation-duration: all 0.5s ease; animation-delay: 0.5s;}
+
+
+
+/* control */
+.wrap .control {width: 100%; height: 60px; padding: 0 72px; box-sizing: border-box; background: #e34a73;}
+.wrap .control .inner {width: 100%; padding: 0 283px; box-sizing: border-box; position: relative;}
+.wrap .control .inner > .tit {font-family: 'PyeongChangPeace'; font-weight: 700; font-size: 25px; position: absolute; top: 15px; left: 25%;  }
+.wrap .control .inner ul {width: 50%; line-height: 60px; margin: 0 auto; }
+.wrap .control .inner ul li > a .tit {font-size: 16px; font-weight: 600;}
+.wrap .control .inner ul li > a .date {font-size: 13px; position: absolute; top: 0; right: 20px}
+.slick-dots {position: absolute; top: 45%; right: -50%;  }
+.slick-dots li button {float: left; width: 6px; height: 6px; background: rgba(0, 0, 0, 0.397); border-radius: 50%; border: none;  margin-right: 5px; text-indent: -9999px;}
+.slick-dots li.slick-active button {background:#000;}
+.wrap .control .slick-arrow {border: none; cursor: pointer;  text-indent: -9999px; width: 200px; height: 29px;  position: absolute; top: 0; left: -75%; background: transparent;  border-bottom: 1px solid#000;}
+.wrap .control .slick-arrow::before {content: ''; background: url(../img/mv_prv.png)no-repeat center 100%;  position: absolute; top: 50%; left: -49px; width: 26px; height: 26px;}
+.wrap .control .slick-arrow.slick-next { left: 130%;}
+.wrap .control .slick-arrow.slick-next::before {left: 230px;}
+
+
+/* section1 */
+.wrap .section1 {width: 100%; padding: 250px 30px 415px; box-sizing: border-box; position: relative;}
+.wrap .section1::before {position: absolute; top: 0; right: 0; content: ''; background: url(../img/shadow.png)no-repeat center top; width: 100%; height: 490px; display: block; z-index: -1;}
+.wrap .section1::after {position: absolute; top: 180px; right: 0; content: ''; background: url(../img/section1_bg.png)no-repeat right top ; width: 100%; height: 1730px;display: block; z-index: -1; }
+.wrap .section1 .txtBox {text-align: center; color: #fff; max-width: 1240px; margin: 0 auto; z-index: 500;}
+.wrap .section1 .txtBox .moon {width: 116px; height: 117px; margin: 0 auto; }
+.wrap .section1 .txtBox .moon img {width: 100%; }
+.wrap .section1 .txtBox .mv-txt {width: 318px; height: 72px; margin: 0 auto 13px;}
+.wrap .section1 .txtBox .mv-txt img {width: 100%;}
+.wrap .section1 .txtBox .mainTxt {font-size: 19px; display: block; margin-top: 3px;}
+.wrap .section1 .txtBox .mainTxt.c {margin-top:17px;}
+.wrap .section1 .videoBox {width: 100%; max-width: 1025px;  margin: 80px auto 0; position: relative;}
+.wrap .section1 .videoBox a {display: block; width: 100%; height: 100%; }
+.wrap .section1 .videoBox .yutube .img {border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.473) 0px 0px 5px; width: 100%; max-height: 730px; overflow: hidden; }
+.wrap .section1 .videoBox .yutube::before {position: absolute; top: 33%; left: 47%;  content: ''; background: url(../img/big_tryi.png)no-repeat; width: 100px; height: 100px; opacity: 1; transition: all 0.5s;}
+.wrap .section1 .videoBox .yutube::after {position: absolute; bottom: 130px; left: 0; content: ''; background: url(../img/paly_bar.png)no-repeat ; width: 100%; height: 50px;  opacity: 1;}
+.wrap .section1 .videoBox .yutube .txt {font-size: 17px; font-weight:700; text-align: center; color: #fff;  background: #262626;  min-width: 254px; border-radius: 40px; position: absolute; top: 0; right: 0; margin: 27px 33px 0 0; padding: 15px 10px 14px 40px; box-sizing: border-box;}
+.wrap .section1 .videoBox .yutube .txt::before {position: absolute;  content: url(../img/youtube.png);  top: 33%; left: 11%;  width: 17px; height: 12px; margin-top: -4px;  }
+.wrap .section1 .videoBox .btn { font-size: 24px; font-weight: 600; text-align: center; color: #fff; margin: 65px auto 0;  min-width: 397px; border-radius: 50px; background: #e34a73;
+    padding: 16px 68px 16px 40px; box-sizing: border-box; width: 420px; position: relative; }
+.wrap .section1 .videoBox .btn::after {position: absolute; top: 50%; right: 36px; transform: translateY(-50%); content: ''; background-image: url(../img/btn_arrow.png); width: 20px; height: 18px; }
+
+
+/* section1 hover */
+.wrap .section1 .videoBox a:hover.yutube::before {opacity: 0; transition: all 0.5s;}
+.wrap .section1 .videoBox a:hover.yutube .txt {background: #2626262d; transition: all 0.5s;}
+/* section1 animation */
+.wrap .section1 .txtBox.motion .moon {animation-name: slide-up; animation-duration: 0.5s;}
+.wrap .section1 .txtBox.motion .mv-txt  {animation-name: slide-up; animation-duration: 0.7s; }
+.wrap .section1 .txtBox.motion .mainTxt.a  {animation-name: slide-up; animation-duration: 0.9s; }
+.wrap .section1 .txtBox.motion .mainTxt.b  {animation-name: slide-up; animation-duration: 1.1s; }
+.wrap .section1 .txtBox.motion .mainTxt.c  {animation-name: slide-up; animation-duration: 1.2s; }
+.wrap .section1 .videoBox.motion  {animation-name: slide-up; animation-duration: 1.0s;}
+
+
+/* section2 */
+.wrap .section2 {width: 100%; text-align: center; margin: 0 auto 250px; color: #fff; position: relative;}
+.wrap .section2::before {position: absolute; top: -77px; right: 33%; content: ''; background: url(../img/ye.png)no-repeat center/cover; width: 200px; height: 200px; opacity: 0.65; z-index: -1; }
+.wrap .section2 .tit {font-size: 50px; font-weight: 600;}
+.wrap .section2 .sub {font-size: 18px; margin-top: 27px;}
+.wrap .section2 ul {width: 1381px; margin: 0 auto; position: relative;  }
+.wrap .section2 ul a {display: block; width: 100%; height: 100%;}
+.wrap .section2 ul a .txtBox {position: absolute; top: 0;  left: 50%; transform: translateX(-50%);}
+.wrap .section2 ul a .txtBox .num {font-size: 45px; color: rgba(255,255,255,0.5); margin-bottom: 15px; font-family: 'Noto Serif KR', serif; font-weight: 900;}
+.wrap .section2 ul a .txtBox .tit {font-size: 120px; font-family: 'PyeongChangPeace'; font-weight: bold; margin-bottom: 15px;}
+.wrap .section2 ul a .txtBox .sub {font-size: 30px; margin-top: 20px; line-height: normal;}
+.wrap .section2 ul .imgBox {position: relative; z-index: -1; width: 100%;  height: auto; padding-top: 100px; box-sizing: border-box;}
+.wrap .section2 ul .imgBox img {width: 100%;}
+.wrap .section2 ul .imgBox::before {position: absolute; top: 15%; left: 29%; width: 74px; height: 74px; content: ''; background: url(../img/obj_or.png);}
+.wrap .section2 ul .imgBox::after {position: absolute; top:13%; right: 17.5%; width: 230px; height: 229px; content: ''; background: url(../img/obj_gr.png); z-index: -1;}
+.wrap .section2 ul li a .list {text-align: left; width: 100%; padding: 36px 15% 0 18%; box-sizing: border-box; display: inline-flex; flex-wrap: wrap; }
+.wrap .section2 ul li a .list li {font-size: 22px; width: 50%; margin-bottom: 40px; padding-left: 18px; box-sizing: border-box; position: relative;}
+.wrap .section2 ul li a .list li::before {position: absolute; top: 10px; left: 0; content: ''; width: 13px; height: 13px; background:url(../img/bul.png)no-repeat center; }
+.wrap .section2 .slick-arrow {border: none; cursor: pointer; width: 294px; height: 62px; text-indent: -9999px;  position: absolute; top: 36%; left: -6%; background: #eebb1f;  border-radius: 70%;}
+.wrap .section2 .slick-arrow::after {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); content: '← 이전'; font-family: 'PyeongChangPeace'; font-size: 25px; font-weight: bold;  text-indent: 0;}
+.wrap .section2 .slick-arrow.slick-next {left: 86%;  background: #9539e3; }
+.wrap .section2 .slick-arrow.slick-next::after {content: '이후 → '; color: #fff; }
+
+/* section2 animation */
+@keyframes opacity {
+    0% {opacity: 0; }
+    30% {opacity: 0;}
+    40% {opacity: 0.25;}
+}
+@keyframes spin {
+    0% { transform:rotate(0deg);}
+    100% { transform:rotate(360deg);}
+}
+
+.wrap .section2 .tit.motion {animation-name: opacity; animation-duration: all .3s; }
+.wrap .section2 .sub.motion  {animation-name: slide-up; animation-duration: all 0.5s; }
+.wrap .section2 .slide2.motion  {animation-name: slide-up; animation-duration:all 0.7s; }
+.wrap .section2 .slide2.motion .imgBox::before {animation-name: spin; animation-duration: 20s; animation: spin 4s infinite linear;}
+.wrap .section2 .slide2.motion .imgBox::after {animation-name: spin; animation-duration: 20s; animation: spin 10s infinite linear;}
+
+/* section3 */
+.wrap .section3 {width: 100%; margin: 0 auto ;  color: #fff; }
+.wrap .section3 .tit {font-size: 50px; text-align: center; font-weight: 600;}
+.wrap .section3 .sub {font-size: 18px; margin-top: 38px; text-align: center;}
+.wrap .section3 .btn {text-align: center; margin: 56px 0 67px;  }
+.wrap .section3 .btn li {display: inline-block; margin: 0 15px;  }
+.wrap .section3 .btn li a {display: block; width: 100%; height: 100%; padding: 14px 10px 13px; box-sizing: border-box;  font-size: 24px; min-width: 200px; min-height: 67px; border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.63); transition: all 0.3s;}
+
+.wrap .section3 .simply-scroll-container {position: relative; margin-bottom: 40px; width: 100%;}
+.wrap .section3 .simply-scroll-clip {position: relative; overflow: hidden;}
+.wrap .section3 .simply-scroll-clip #top {display: flex; flex-wrap: wrap;}
+.wrap .section3 .simply-scroll-clip #top li {margin: 0 10px; width: 358px; height: 287px; border-radius: 30px; overflow: hidden;}
+.wrap .section3 .simply-scroll-clip #top li img {width: 100%; height: 100%;}
+.wrap .section3 .simply-scroll-clip #bottom {display: flex; flex-wrap: wrap;}
+.wrap .section3 .simply-scroll-clip #bottom li {margin: 0 10px; width: 358px; height: 287px; border-radius: 30px; overflow: hidden;}
+.wrap .section3 .simply-scroll-clip #bottom li img {width: 100%; height: 100%;}
+
+
+/* section3 hover */
+.wrap .section3 .btn li a:hover {border: 1px solid #e34a73; background: #e34a73; transition: all 0.3s;}
+/* section3 animation */
+.wrap .section3 .tit.motion {animation-name: opacity; animation-duration: all .3s; }
+.wrap .section3 .sub.motion {animation-name: slide-up; animation-duration: all 0.4s;}
+.wrap .section3 .btn.motion {animation-name: slide-up; animation-duration: all 0.6s;}
+.wrap .section3 .scroller.motion {animation-name: opacity; animation-duration: all 0.6s; }
+
+
+/* section4 */
+.wrap .section4 {width: 100%; padding: 159px 30px 190px; box-sizing: border-box; margin: 0 auto; text-align: center; color: #fff; }
+.wrap .section4 .inner {max-width: 1280px; width: 100%; margin: 0 auto;}
+.wrap .section4 .inner .titimg {width: 320px; height: 302px; display: inline-block;}
+.wrap .section4 .inner .titimg img {min-width: 80%;}
+.wrap .section4 .inner ul {margin: 49px -10px 0;  width: calc(100% + 20px); overflow: hidden;}
+.wrap .section4 .inner ul li {width: calc(100% / 6 - 20px); margin: 0 10px; display: inline-block; float: left;}
+.wrap .section4 .inner ul li a {display: block; width: 100%;height: 100%; font-size: 25px; text-align: left; padding: 22px 26px; box-sizing: border-box;  height: 176px; border: 2px solid rgba(255,255,255,0.11); border-radius: 10px; position: relative; transition: all 0.3s; background: transparent;} 
+.wrap .section4 .inner ul li a::after {position: absolute; bottom: 19px; right: 21px; width: 43px; height: 43px; content: ''; background: url(../img/ov1.png)no-repeat center;  background-size: 100%;}
+.wrap .section4 .inner ul li:nth-child(2) a::after {background: url(../img/ov2.png)no-repeat center;} 
+.wrap .section4 .inner ul li:nth-child(3) a::after {background: url(../img/ov3.png)no-repeat center;} 
+.wrap .section4 .inner ul li:nth-child(4) a::after {background: url(../img/ov4.png)no-repeat center;} 
+.wrap .section4 .inner ul li:nth-child(5) a::after {background: url(../img/ov5.png)no-repeat center;} 
+.wrap .section4 .inner ul li:nth-child(6) a::after {background: url(../img/ov6.png)no-repeat center;} 
+
+
+/* section4 hover */
+.wrap .section4 .inner ul li a:hover {border: 1px solid #e34a73; background: #e34a73; transition: all 0.3s;}
+
+/* section4 animation */
+@keyframes bar {
+    0% {opacity: 0;  transform: translateX(-200px);}
+    30% {opacity: 0;  transform: translateX(-200px);}
+}
+
+.wrap .section4 .inner .titimg.motion  {animation-name: slide-up; animation-duration: all 0.2s;}
+.wrap .section4 .inner ul li.motion {animation-name: bar; animation-duration: all 0.1s; animation-delay: 0.1s;}
+.wrap .section4 .inner ul li:nth-child(2).motion {animation-name: bar; animation-duration: all 0.1s; animation-delay: 0.2s;}
+.wrap .section4 .inner ul li:nth-child(3).motion {animation-name: bar; animation-duration: all 0.1s; animation-delay: 0.3s;}
+.wrap .section4 .inner ul li:nth-child(4).motion {animation-name: bar; animation-duration: all 0.1s; animation-delay: 0.4s;}
+.wrap .section4 .inner ul li:nth-child(5).motion {animation-name: bar; animation-duration: all 0.1s; animation-delay: 0.5s;}
+.wrap .section4 .inner ul li:nth-child(6).motion {animation-name: bar; animation-duration: all 0.1s; animation-delay: 0.6s;}
+
+
+/* footer */
+footer {width: 100%; min-height: 358px; border-top: 1px solid#0a0e11; background-color: #0a0e11; padding: 50px 30px; box-sizing: border-box; position: relative;}
+footer::before {position: absolute; top: -228px; left: 0; content: ''; width: 100%;height: 226px; background:-webkit-linear-gradient(90deg, rgba(25,39,49,1), transparent);}
+footer::after {position: absolute; top: -226px; left: 0; content: ''; width: 100%; height: 226px; background-size: cover; background:url(../img/fooger_bg.png)no-repeat center bottom; display: block;}
+footer .inner {width: 100%; max-width: 1240px;  margin: 0 auto; text-align: center;}
+footer .inner .footerlogo {display: flex;  align-items: center; justify-content: center;}
+footer .inner .footerlogo .img {margin: 0 30px; width: 140px; height: 42px;}
+footer .inner .footerlogo .img a {display: block; width: 100%; height: 100%;}
+footer .inner .sns {width: 100%; padding: 65px 0 41px;}
+footer .inner .sns a {display: inline-block; width: 26px; height: 26px; margin: 0 20px; align-items: center;}
+footer .inner .sns a img {width: 100%;}
+footer .inner ul {width: 100%; margin-bottom: 7.5px;}
+footer .inner ul li {display: inline-block; margin-right: 18px; margin-bottom: 7.5px; font-size: 15px; color: #4c5861; letter-spacing: -0.5px; }
+footer .inner .copy {font-size: 15px; color: #4c5861;}
+
+
+/* responsive Web */
+/* ~1580px  */
+@media screen and (max-width:1580px) {
+    .wrap .section1::after {height: 1280px; top: 300px; background-size: 100%;}
+    .wrap .section3 .simply-scroll-clip #top li { width: 345px; height: 276px;}
+    .wrap .section3 .simply-scroll-clip #bottom li { width: 345px; height: 276px;}
+}
+
+
+/* ~1280px  기준점 1100px 태블릿모드 */
+@media screen and (max-width:1280px) {
+    header .innerHeader .gnb {display: none;}
+    .wrap .visual::before {display: none;}
+    .wrap .control .inner {padding: 0 50px;}
+    .wrap .control .inner > .tit {left: 5%;}
+    .wrap .control .inner ul {width: 70%; left: 5%;}
+    .wrap .control .slick-arrow {display: none;}
+    .wrap .control .slick-arrow::before {display: none;}
+    .wrap .control .slick-dots {right: -180%;}
+    .wrap .section2::before {right: 23%;}
+    .wrap .section2 ul {width: 95%; margin: 30px auto 0;}
+    .wrap .section2 ul .imgBox {width: 100%;}
+    .wrap .section2 ul .imgBox img {width: 100%;}
+    .wrap .section2 ul li a .list li {font-size: 20px;}
+    .wrap .section2 .slick-arrow {width: 200px; top: 40%; height: 50px; left: 0; z-index: 100;}
+    .wrap .section2 .slick-arrow.slick-next {left: 80%;}
+    .wrap .section4 .inner ul li a {padding: 20px; font-size: 20px;}
+}
+
+
+/* ~730px  기준점 620px 모바일모드  */
+@media screen and (max-width:730px) {
+    header .innerHeader .tnb {right: 15px;}
+    header .innerHeader .logo {left: 15px;}
+    .wrap .visual {height: 780px; background: url(../img/main_vs_768.jpg)no-repeat center/cover; padding: 0 0 0px;}
+    .wrap .visual .inner .mv-txt {width: 142px; height: 183px;}
+    .wrap .visual .inner .rightTxt .sub-tit {display: none;}
+    .wrap .visual .inner .rightTxt .sub-sub {display: none;}
+    .wrap .visual .inner .rightTxt {position : inherit; margin-top: 30px; text-align: center;  left: 50%; transform: translateX(-50%); }
+    .wrap .visual .inner .rightTxt .date {font-size: 15px;}
+
+    .wrap .control {padding: 0 40px;}
+    .wrap .control .inner {padding: 0;}
+    .wrap .control .inner > .tit {top: -22px; left: 37%; padding: 5px 25px; box-sizing: border-box; border-radius: 20px; background: #e34a73; font-size: 22px;}
+    .wrap .control .inner ul {width: 100%; left: -1.5%;}
+    .wrap .control .slick-dots {right: -200%;}
+    .wrap .section1::before {height: 330px;}
+    .wrap .section1 .txtBox .mv-txt {width: 280px; height: 63px;}
+
+    .wrap .section1::before {background: url(../img/shadow_1024.png)no-repeat top/center; height: 330px; top: -78px; opacity: 0.8;}
+    .wrap .section1 {padding: 160px 30px 250px;}
+    .wrap .section1 .videoBox {margin: 50px auto 0; overflow: hidden;}
+    .wrap .section1 .videoBox img {width: 100%;}
+    .wrap .section1 .videoBox .yutube .txt {margin: 20px 23px 0 0; font-size: 13px; font-weight: 500; padding:10px 18px 9px 40px ; min-width: 154px;}
+    .wrap .section1 .videoBox .yutube .txt::before {top: 40%; left: 8%;}
+    .wrap .section1 .videoBox .yutube::before {background-size: 80%; top: 30%; left: 45%;}
+    .wrap .section1 .videoBox .yutube::after {background-size: 100%; bottom: 117px;}
+    .wrap .section1 .videoBox .btn {margin: 50px auto 0; font-size: 22px; min-width: 392px;}
+    .wrap .section1::after {top: 750px; }
+    .wrap .section2::before {display: none;}
+    .wrap .section2 ul {width: 100%;}
+    .wrap .section2 ul a .txtBox .num {font-size: 31px;}
+    .wrap .section2 ul a .txtBox .tit {font-size: 70px; margin-bottom: 0;}
+    .wrap .section2 ul a .txtBox .sub {font-size: 20px; margin-top: 0;}
+    .wrap .section2 ul .imgBox {width: 140%; right: 132px; overflow: hidden;}
+    .wrap .section2 ul .imgBox::before {background: url(../img/obj_or.png)no-repeat center; background-size:65%; top: 18%;}
+    .wrap .section2 ul .imgBox::after {background: url(../img/obj_gr.png)no-repeat center; background-size:65%; top: 12%; right: 15.5%;}
+    .wrap .section2 .slick-arrow {width: 120px; height: 40px; top: 5%; left: 20px; font-size: 15px;}
+    .wrap .section2 .slick-arrow::after {font-size: 19px;}
+    .wrap .section2 .slick-arrow.slick-next {left: 75%;}
+    .wrap .section2 ul li a .list {padding: 22px 4% 0 4%;}
+    .wrap .section2 ul li a .list li {font-size: 16px; margin-bottom:20px;}
+    .wrap .section3 .sub {margin-top: 20px;}
+    .wrap .section3 .btn {margin: 25px 0  40px;}
+    .wrap .section3 .btn li a {min-width: 118px; min-height: 40px; margin: 0 5px; padding: 9px 10px 8px; box-sizing: border-box; font-size: 15px;}
+    .wrap .section3 .simply-scroll-container {margin-bottom: 20px;}
+    .wrap .section3 .simply-scroll-clip #top li {width: 300px; height: 245px;}
+    .wrap .section3 .simply-scroll-clip #bottom li {width: 300px; height: 245px;}
+    .wrap .section4 {padding: 227px 35px 220px;}
+    .wrap .section4 .inner .titimg img {width: 60%;}
+    .wrap .section4 .inner ul li {width: calc(100% / 3 - 10px); margin: 0 5px  10px;}
+    .wrap .section4 .inner ul li:nth-child(3n) {margin-right: none;}
+    .wrap .section4 .inner ul li a {padding: 18px 16px; height: 160px;}
+    .wrap .section4 .inner ul li a::after {background-size: 90%; width: 31px; height: 31px;}
+    .wrap .section4 .inner ul li:nth-child(2) a::after {background-size: 90%;}
+    .wrap .section4 .inner ul li:nth-child(3) a::after {background-size: 90%;}
+    .wrap .section4 .inner ul li:nth-child(4) a::after {background-size: 90%;}
+    .wrap .section4 .inner ul li:nth-child(5) a::after {background-size: 90%;}
+    .wrap .section4 .inner ul li:nth-child(6) a::after {background-size: 90%;}
+}
+
+
+/* ~600px  기준점 496px 모바일모드2  */
+@media screen and (max-width:600px) {
+    .wrap .control .inner ul li > a .date {display: none;}
+    .wrap .section1 .videoBox .yutube::before {background-size: 60%;}
+    .wrap .section1 .videoBox .yutube::after {bottom: 100px;}
+    .wrap .section1 .videoBox .btn {width: 100%;}
+    .wrap .section2 ul .imgBox {width: 120%; right: 60px; }
+
+}
